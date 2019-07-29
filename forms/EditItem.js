@@ -4,7 +4,7 @@ import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 // import axios from "axios";
 
-function NewItmFrm({ values, errors, touched, isSubmitting }) {
+function EditItmFrm({ values, errors, touched, isSubmitting }) {
   return (
     
     <Form>
@@ -42,7 +42,7 @@ function NewItmFrm({ values, errors, touched, isSubmitting }) {
   );
 }
 
-const NewItemForm = withFormik({
+const EditItemForm = withFormik({
   mapPropsToValues({
     itemType,
     description,
@@ -86,5 +86,5 @@ const NewItemForm = withFormik({
       );
     }
   }
-)(NewItmFrm);
-export default NewItemForm;
+)(EditItmFrm);
+export default EditItemForm;
