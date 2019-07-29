@@ -2,7 +2,7 @@ import React from "react";
 import { Card, Image, Icon } from "semantic-ui-react";
 import ProfileHeader from "./ProfileHeader";
 
-const Profile = props => {
+const ItemCard = props => {
   return (
     <div className="profile">
       <ProfileHeader />
@@ -28,4 +28,4 @@ const Profile = props => {
   );
 };
 
-export default Profile;
+export default ItemCard;

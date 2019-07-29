@@ -1,7 +1,13 @@
 import React from "react";
 
 const NavBar = () => {
-  return <nav>NAV BAR GOES HERE</nav>;
+  return (
+    <nav>
+      <a>Account Settings</a>
+      <a>MyTech</a>
+      <a>Explore Tech</a>
+    </nav>
+  );
 };
 
 export default NavBar;
