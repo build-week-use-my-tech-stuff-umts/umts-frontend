@@ -95,27 +95,9 @@ function EditProFrm({ values, errors, touched, isSubmitting }) {
             <Field type="text" name="zip" placeholder="Zip" />
           </label>
         </div>
-        <div className="field">
-          <label htmlFor="password">
-            Password
-            {touched.password && errors.password && <p>{errors.password}</p>}
-            <Field type="password" name="password" placeholder="Password" />
-          </label>
-        </div>
-        <div className="field">
-          <label htmlFor="cPassword">
-            Confirm Password
-            {touched.cPassword && errors.cPassword && <p>{errors.cPassword}</p>}
-            <Field
-              type="password"
-              name="cPassword"
-              placeholder="Confirm Password"
-            />
-          </label>
-        </div>
         {/* disabled={isSubmitting}  ***Removed from submit button for testing***/}
         <button className="ui button" type="submit">
-          Submit
+          Update Profile
         </button>
         <button className="ui button" type="reset">
           Reset Form
@@ -131,29 +113,19 @@ const EditProfileForm = withFormik({
     address,
     city,
     state,
-    zip,
-    password,
-    cPassword
+    zip
+  
   }) {
     return {
       phone: phone || "",
       address: address || "",
       city: city || "",
       state: state || "Alaska",
-      zip: zip || "",
-      password: password || "",
-      cPassword: cPassword || "",
+      zip: zip || ""
     };
   },
   validationSchema: Yup.object().shape({
-    password: Yup.string()
-      .min(8, "Password must be 8 characters or longer")
-      .required("Password is required"),
-    cPassword: Yup.string().oneOf(
-      [Yup.ref("password"), null],
-      "Passwords must match!"
-    ),
-    zip: Yup.string()
+     zip: Yup.string()
       .min(5, "Zipcode must be 5 numbers")
       .max(5, "Zipcode cannot be longer than 5 numbers")
   }),

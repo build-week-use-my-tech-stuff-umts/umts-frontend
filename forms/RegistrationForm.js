@@ -182,14 +182,14 @@ const RegistrationForm = withFormik({
     };
   },
   validationSchema: Yup.object().shape({
-    firstName: Yup.string().required("First Name is required"),
-    lastName: Yup.string().required("Last Name is required"),
+    firstName: Yup.string().required("is required"),
+    lastName: Yup.string().required("is required"),
     email: Yup.string()
-      .email("Email not valid")
-      .required("Email is required"),
+      .email("is not valid")
+      .required("is required"),
     password: Yup.string()
       .min(8, "Password must be 8 characters or longer")
-      .required("Password is required"),
+      .required("is required"),
     cPassword: Yup.string().oneOf(
       [Yup.ref("password"), null],
       "Passwords must match!"

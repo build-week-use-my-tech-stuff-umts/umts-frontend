@@ -6,18 +6,24 @@ import * as Yup from "yup";
 
 function LogFrm({ values, errors, touched, isSubmitting }) {
   return (
+      <div className='form-card'>
     <Form>
-      <div>
+      <div className='field'>
+          <label htmlFor='email'>
         {touched.email && errors.email && <p>{errors.email}</p>}
         <Field type="email" name="email" placeholder="Email" />
+        </label>
       </div>
-      <div>
+      <div className='field'>
+          <label htmlFor='password'>
         {touched.password && errors.password && <p>{errors.password}</p>}
         <Field type="password" name="password" placeholder="Password" />
+      </label>
       </div>
       {/* disabled={isSubmitting}  ***Removed from submit button for testing***/}
-      <button type="submit">Login</button>
+      <button className='ui button' type="submit">Login</button>
     </Form>
+    </div>
   );
 }
 
@@ -31,9 +37,9 @@ const LoginForm = withFormik({
   validationSchema: Yup.object().shape({
     email: Yup.string()
       .email("Email not valid")
-      .required("Email is required"),
+      .required("is required"),
     password: Yup.string()
-      .required("Password is required"),
+      .required("is required"),
   }),
 
   handleSubmit(values, { resetForm, setErrors, setSubmitting }) {

@@ -32,7 +32,7 @@ function NewItmFrm({ values, errors, touched, isSubmitting }) {
         </label>
       </div>
       <div className='field'>
-        <label htmlFor='imageUrl'>Image URL
+        <label htmlFor='imageUrl'>URL of Item Image
         {touched.imageUrl && errors.imageUrl && <p>{errors.imageUrl}</p>}
         <Field type="url" name="imageUrl" placeholder="Product Image URL" />
         </label>
@@ -72,12 +72,12 @@ const NewItemForm = withFormik({
   },
   validationSchema: Yup.object().shape({
     itemType: Yup.string().required("Type is required"),
-    description: Yup.string().required("Description is required"),
+    description: Yup.string().required("is required"),
     price: Yup.string()
-      .required("Price is required"),
+      .required("is required"),
     imageUrl: Yup.string()
     .url('Must be a valid URL')
-     .required("Image URL is required"),
+     .required("is required"),
   }),
 
   handleSubmit(values, { resetForm, setErrors, setSubmitting }) {

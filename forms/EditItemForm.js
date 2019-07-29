@@ -7,7 +7,8 @@ import * as Yup from "yup";
 function EditItmFrm({ values, errors, touched, isSubmitting }) {
   return (
     
-    <Form>
+    <Form className='ui form'>
+        <div className='field'>
     <label htmlFor='itemType'> Type of Item:
       <Field component="select" name="itemType">
           <option value="Camera">Camera</option>
@@ -17,27 +18,36 @@ function EditItmFrm({ values, errors, touched, isSubmitting }) {
           <option value="Others">Other</option>
         </Field>
     </label>
-      <div>
+    </div>
+    <div className='field'>
+<label htmlFor='description'> Description
         {touched.description && errors.description && <p>{errors.description}</p>}
         <Field component='textarea' name="description" placeholder="Item Description" />
+        </label>
       </div>
-      <div>
+      <div className='field'>
+          <label htmlFor='price'> Price
         {touched.price && errors.price && <p>{errors.price}</p>}
         <Field type="number" name="price" placeholder="Weekly Rental Price" />
+        </label>
       </div>
-      <div>
+      <div className='field'>
+          <label htmlFor='imageUrl'> URL of Item Image
         {touched.imageUrl && errors.imageUrl && <p>{errors.imageUrl}</p>}
-        <Field type="url" name="imageUrl" placeholder="Product Image URL" />
+        <Field type="url" name="imagUrl" placeholder="Product Image URL" />
+        </label>
       </div>
-      <div>
+      <div className='field'>
+          <label htmlFor='address'> Address
         {touched.address && errors.address && <p>{errors.address}</p>}
         <Field type="text" name="address" placeholder="Address" />
         {/*TODO::: Address value should populate with address in the persons profile */}
+        </label>
       </div>
       
       {/* disabled={isSubmitting}  ***Removed from submit button for testing***/}
-      <button type='submit'>Submit</button>
-      <button type='reset'>Reset Form</button>
+      <button className='ui button' type='submit'>Submit</button>
+      <button className='ui button' type='reset'>Reset Form</button>
     </Form>
   );
 }
@@ -61,12 +71,12 @@ const EditItemForm = withFormik({
   },
   validationSchema: Yup.object().shape({
     itemType: Yup.string().required("Type is required"),
-    description: Yup.string().required("Description is required"),
+    description: Yup.string().required("is required"),
     price: Yup.string()
-      .required("Price is required"),
+      .required("is required"),
     imageUrl: Yup.string()
-    .url('Must be a valid URL')
-     .required("Image URL is required"),
+    .url('must be a valid URL')
+     .required("is required"),
   }),
 
   handleSubmit(values, { resetForm, setErrors, setSubmitting }) {
