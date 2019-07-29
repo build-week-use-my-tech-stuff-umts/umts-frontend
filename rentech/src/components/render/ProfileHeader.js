@@ -5,6 +5,7 @@ const ProfileHeader = props => {
     <div className="profile-header">
       <div className="logo">LOGO RIGHT HERE</div>
       <h1>RenTech</h1>
+      <span>Hi, User:John Doe</span>
     </div>
   );
 };
