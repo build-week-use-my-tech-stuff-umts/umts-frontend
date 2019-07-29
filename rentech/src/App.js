@@ -8,6 +8,7 @@ import "semantic-ui-css/semantic.min.css";
 import NavBar from "./components/render/NavBar";
 import ItemCardList from "./components/render/ItemCardList";
 import AccountInfo from "./components/render/AccountInfo";
+import MyTechList from "./components/render/MyTech";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <NavBar />
       <ItemCardList />
       <AccountInfo />
+      <MyTechList />
     </div>
   );
 }
