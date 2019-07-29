@@ -23,7 +23,7 @@ function NewItmFrm({ values, errors, touched, isSubmitting }) {
       </div>
       <div>
         {touched.price && errors.price && <p>{errors.price}</p>}
-        <Field type="text" name="price" placeholder="Weekly Rental Price" />
+        <Field type="number" name="price" placeholder="Weekly Rental Price" />
       </div>
       <div>
         {touched.imageUrl && errors.imageUrl && <p>{errors.imageUrl}</p>}
