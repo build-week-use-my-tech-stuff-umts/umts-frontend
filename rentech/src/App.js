@@ -6,14 +6,16 @@ import ProfileHeader from "./components/render/ProfileHeader";
 //Styles
 import "semantic-ui-css/semantic.min.css";
 import NavBar from "./components/render/NavBar";
-import ItemCard from "./components/render/ItemCard";
+import ItemCardList from "./components/render/ItemCardList";
+import AccountInfo from "./components/render/AccountInfo";
 
 function App() {
   return (
     <div className="App">
       <ProfileHeader />
       <NavBar />
-      <ItemCard />
+      <ItemCardList />
+      <AccountInfo />
     </div>
   );
 }
