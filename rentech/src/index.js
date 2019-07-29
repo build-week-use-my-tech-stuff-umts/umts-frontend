@@ -16,14 +16,13 @@ import './index.css';
 
 
 
-const store = createStore(rootReducer, applyMiddleware(thunk, authMiddleware));
+//const store = createStore(rootReducer, applyMiddleware(thunk, authMiddleware));
 
 ReactDOM.render(
-  <Provider store={store}>
-    <Router>
+  <Router>
       <App />
     </Router>
-  </Provider>,
+  ,
   document.getElementById('root'),
 );
 
