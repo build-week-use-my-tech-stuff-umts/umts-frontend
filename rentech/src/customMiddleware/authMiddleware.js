@@ -14,4 +14,3 @@ export const authMiddleware = state => next => action => {
 	next(action);
 };
 
-//change TBD to id from api for the user
