@@ -1,7 +1,6 @@
-import types from '../actions';
+import { types } from '../actions';
 
 const initialState = {
-	tools: [
 	equipment: [
 		{
       catId:null,

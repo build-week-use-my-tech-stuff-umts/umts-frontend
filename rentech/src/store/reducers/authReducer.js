@@ -1,4 +1,4 @@
-import types from '../actions';
+import { types } from '../actions';
 import jwt_decode from 'jwt-decode';
 
 
