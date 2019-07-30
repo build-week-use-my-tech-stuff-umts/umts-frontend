@@ -1,7 +1,8 @@
 import {umtsApi} from '../../api/umtsApi'
 import { types }from './index'
 
-
+//res.data.user.(insert thing i want here)
+//res.data.token
 
 export const doSignIn = credentials => async dispatch =>{
   dispatch({ type: types.LOGIN_START});

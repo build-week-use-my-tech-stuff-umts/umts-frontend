@@ -11,11 +11,13 @@ import App from "./App";
 
 import "./scss/index.scss";
 
-//const store = createStore(rootReducer, applyMiddleware(thunk, authMiddleware));
+const store = createStore(rootReducer, applyMiddleware(thunk, authMiddleware));
 
 ReactDOM.render(
-  <Router>
-    <App />
-  </Router>,
+  <Provider store={store}>
+    <Router>
+      <App />
+    </Router>
+  </Provider>,
   document.getElementById("root")
 );
