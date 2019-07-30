@@ -27,13 +27,13 @@ function MyTechItems() {
       <Card>
         <Image src={require("../../img/camera-macro-optics-122400.jpg")} wrapped ui={false} />
         <Card.Content>
-          <Card.Header>Item Name: Super Digital Camera</Card.Header>
+          <Card.Header>Item Name Prop</Card.Header>
           <Card.Description>
-            Sony RcX8VTS digital camera in perfect condition.
+            Item Description Prop
           </Card.Description>
         </Card.Content>
         <Card.Content extra>
-          <Card.Header>Price: $100.00</Card.Header>
+          <Card.Header>Item Price Prop $000.00</Card.Header>
         </Card.Content>
                     <Card.Content extra>
         <Icon name='camera' />

@@ -6,7 +6,7 @@ import NewItemForm from "../forms/NewItemForm.js";
 const AddItem = () => {
   return (
     <div className="edit-account">
-      <Modal trigger={<Button size="huge" color='blue'>+ Add an Item</Button>}>
+      <Modal trigger={<Button size="huge" color='white'>+ Add an Item</Button>}>
         <Modal.Header>Add an Item</Modal.Header>
         <Modal.Content>
           <NewItemForm />

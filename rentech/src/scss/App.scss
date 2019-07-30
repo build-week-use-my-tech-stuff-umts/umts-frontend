@@ -77,6 +77,14 @@ margin-top: 1%;
         padding-left: 1rem;
         justify-content: space-around;
         padding: 1rem;
+
+        .blue {
+          background-color: $lighter !important;
+      }
+
+        .red {
+            background-color: $primary !important;
+        }
     }
   }
 }
@@ -114,7 +122,7 @@ nav a {
       box-shadow: 7px 5px 18px #333;
 
       .blue {
-          background-color: $primary !important;
+          background-color: $lighter !important;
       }
     }
   }

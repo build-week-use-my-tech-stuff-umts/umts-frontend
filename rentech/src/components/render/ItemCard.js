@@ -11,13 +11,13 @@ const ItemCard = props => {
           ui={false}
         />
         <Card.Content>
-          <Card.Header>Item Name: Super Digital Camera</Card.Header>
+          <Card.Header>Item Name Props</Card.Header>
           <Card.Description>
-            Sony RcX8VTS digital camera in perfect condition.
+            Item Description Props
           </Card.Description>
         </Card.Content>
         <Card.Content extra>
-        <Card.Header>Item Price: $100 per day</Card.Header>
+        <Card.Header>Item Price Props $000.00</Card.Header>
         </Card.Content>
             <Card.Content extra>
         <Icon name='camera' />
