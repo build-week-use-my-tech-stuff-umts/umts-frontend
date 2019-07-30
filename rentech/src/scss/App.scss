@@ -1,0 +1,60 @@
+.profile-header {
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20px;
+  margin-top: 20px;
+  border: 1px solid black;
+  background-color: blue;
+
+  .flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    width: 100%;
+  }
+
+  .greeting-col {
+    display: flex;
+    align-items: flex-end;
+  }
+  .logo {
+    height: 180px;
+    width: 180px;
+  }
+}
+.profile-header h1 {
+  font-size: 3rem;
+}
+.account {
+  h2 {
+    font-size: 5rem;
+  }
+  margin: 20px;
+  font-size: 2.5rem;
+  line-height: 4rem;
+  border: 1px solid black;
+}
+nav {
+  margin-left: 20px;
+  margin-top: 20px;
+  border: 1px solid blue;
+}
+nav a {
+  padding: 5px;
+}
+.item-list {
+  display: flex;
+}
+.item-card {
+  margin: 20px;
+}
+.items {
+  margin-top: 10px;
+  margin-left: 20px;
+  border: 1px solid orange;
+}
+.add-button-mytech {
+  font-size: 2rem;
+}
