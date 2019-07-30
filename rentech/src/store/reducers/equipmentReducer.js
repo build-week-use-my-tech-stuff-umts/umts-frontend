@@ -2,6 +2,7 @@ import types from '../actions';
 
 const initialState = {
 	tools: [
+	equipment: [
 		{
       catId:null,
       description: "",
