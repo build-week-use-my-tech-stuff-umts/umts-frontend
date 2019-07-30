@@ -7,8 +7,8 @@ const Header = props => {
       <div className="flex-row">
         <img src={Logo} alt="RenTech Logo" className="logo" />
       </div>
-      <NavLink to="Login">Login</NavLink>
-      <NavLink to="CreateAccount">Create Account</NavLink>
+      <NavLink to="login">Login</NavLink>
+      <NavLink to="createaccount">Create Account</NavLink>
     </div>
   );
 };
