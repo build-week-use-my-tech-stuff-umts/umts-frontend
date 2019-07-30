@@ -1,6 +1,5 @@
 import umtsApiWithAuth from '../../api/umtsApiWithAuth'
 import { types }from './index'
-import AccountInfo from '../../components/render/AccountInfo.js'
 //res.data.user.(insert thing i want here)
 //res.data.token
 

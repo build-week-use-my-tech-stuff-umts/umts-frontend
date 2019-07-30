@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../../img/rentech-logo-blue.png";
+import Logo from "../../img/rentech-logo-new.png";
 import { Route, Switch, NavLink } from "react-router-dom";
 const Header = props => {
   return (
