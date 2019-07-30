@@ -7,6 +7,7 @@ import * as Yup from "yup";
 function LogFrm({ values, errors, touched, isSubmitting }) {
   return (
     <div className="form-card">
+    <h1>Login</h1>
       <Form className="ui form">
         <div className="field">
           <label htmlFor="email">

@@ -4,7 +4,6 @@ import RegistrationForm from "../forms/RegistrationForm.js";
 export default function CreateAcctCard() {
   return (
     <div>
-      <Header />
       <RegistrationForm />
     </div>
   );

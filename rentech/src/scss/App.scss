@@ -29,17 +29,24 @@
   font-size: 3rem;
 }
 .account {
-  margin: 0 auto;
-  width: 50%;
+  margin: 1% auto;
+  width: 80%;
 
   h2 {
     font-size: 5rem;
   }
-  margin: 20px;
   font-size: 2.5rem;
   line-height: 4rem;
   border: 1px solid black;
 }
+.account-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+  .edit-account{
+margin-top: 1%;
+  }
 
 .tech-container {
   width: 80%;
