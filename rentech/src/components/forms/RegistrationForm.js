@@ -7,6 +7,7 @@ import * as Yup from "yup";
 function RegFrm({ values, errors, touched, isSubmitting }) {
   return (
     <div className="form-card">
+    <h1>Create an Account</h1>
       <Form className="ui form">
         <div className="field">
           <label htmlFor="firstName">
