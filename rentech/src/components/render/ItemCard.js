@@ -16,6 +16,9 @@ const ItemCard = props => {
           <Card.Description>
             Sony RcX8VTS digital camera in perfect condition.
           </Card.Description>
+          <Card.Content>
+          <Card.Header>Item Price: $100 per day</Card.Header>
+          </Card.Content>
         </Card.Content>
         <Card.Content extra>
           <a>

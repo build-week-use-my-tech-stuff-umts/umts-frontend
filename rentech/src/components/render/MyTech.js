@@ -4,14 +4,20 @@ import AddItem from "./AddItem.js";
 import EditItem from "./EditItem.js";
 const MyTechList = () => {
   return (
+    <div>
+
+    <h2 className='myTech-header'>My Tech Items</h2>
+
     <div className="tech-container">
-      <h2>My Tech Items</h2>
       <div className="myTech-list">
         {/* Map out given user items */}
         <MyTechItems />
         <AddItem />
       </div>
     </div>
+    </div>
+
+
   );
 };
 
