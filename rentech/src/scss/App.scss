@@ -2,7 +2,7 @@
 
 .profile-header {
   font-size: 1.5rem;
-  display: flex;
+//   display: flex;
   justify-content: space-between;
   margin: 0 auto;
   border-bottom: 5px solid $dark;
@@ -18,11 +18,16 @@
 
   .greeting-col {
     display: flex;
-    align-items: flex-end;
+    // align-items: flex-end;
   }
   .logo {
     height: auto;
     width: 20%;
+  }
+
+  .link-container {
+      display: flex;
+      flex-direction: column;
   }
 }
 .profile-header h1 {
@@ -37,7 +42,6 @@
   }
   font-size: 2.5rem;
   line-height: 4rem;
-  border: 1px solid black;
 }
 .account-header{
     display: flex;
@@ -47,6 +51,12 @@
   .edit-account{
 margin-top: 1%;
   }
+
+.myTech-header {
+    margin: 0 auto;
+    width: 80%;
+    padding-top: 2rem;
+}
 
 .tech-container {
   width: 80%;
@@ -58,8 +68,18 @@ margin-top: 1%;
   .myTech-item {
     margin: 20px;
     box-shadow: 7px 5px 18px #333;
+
+    .button-box {
+        display: flex;
+        padding-left: 1rem;
+        justify-content: space-around;
+        padding: 1rem;
+    }
   }
 }
+// .blue-button   {
+//           padding-top: 1rem!important;
+//         }
 
 nav {
   margin-left: 20px;
@@ -104,4 +124,18 @@ nav a {
 .form-card {
   width: 50%;
   margin: 1% auto;
+}
+.float-right{
+    float:right;
+    margin: 2% 4%;
+   .login{
+       margin-right:3%;
+       padding-bottom: 1rem;
+   }
+}
+
+.item-page {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 0.5rem;
 }

@@ -4,11 +4,15 @@ import { Route, Switch, NavLink } from "react-router-dom";
 const Header = props => {
   return (
     <div className="profile-header">
-      <div className="flex-row">
         <img src={Logo} alt="RenTech Logo" className="logo" />
+        <div className='float-right'>
+
+        <div className='link-container'>
+        <NavLink className='login' to="login">Login</NavLink>
+        <NavLink to="createaccount">Create Account</NavLink>
       </div>
-      <NavLink to="login">Login</NavLink>
-      <NavLink to="createaccount">Create Account</NavLink>
+
+      </div>
     </div>
   );
 };

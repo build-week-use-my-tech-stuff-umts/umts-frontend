@@ -6,7 +6,7 @@ import { Header, Button, Modal, Image } from "semantic-ui-react";
 const ItemPage = () => {
   return (
     <div className="item-page">
-      <Modal trigger={<Button>View Details</Button>}>
+      <Modal trigger={<Button color='blue'>View Details</Button>}>
         <Modal.Header>Item Name: Super Digital Camera</Modal.Header>
         <Modal.Content image>
           <Image wrapped size="medium" src="/images/avatar/large/rachel.png" />

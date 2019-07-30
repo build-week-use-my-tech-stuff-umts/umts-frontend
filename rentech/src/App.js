@@ -15,6 +15,7 @@ function App() {
       <Header />
       <NavBar />
       <AppRouter />
+
     </div>
   );
 }

@@ -1,6 +1,5 @@
 import React from "react";
-import { Card, Image, Icon } from "semantic-ui-react";
-import ItemPage from "./ItemPage";
+import { Card, Image, Icon, Modal, Header, Button } from "semantic-ui-react";
 
 const ItemCard = props => {
   return (
@@ -18,13 +17,28 @@ const ItemCard = props => {
           </Card.Description>
         </Card.Content>
         <Card.Content extra>
-          <a>
-            <Icon name="mail" />
-            Message User NEEDS WORKS
-          </a>
+        <Card.Header>Item Price: $100 per day</Card.Header>
         </Card.Content>
         <ItemPage />
       </Card>
+    </div>
+  );
+};
+
+const ItemPage = () => {
+  return (
+    <div className="item-page">
+      <Modal trigger={<Button color='blue'>View Details</Button>}>
+        <Modal.Header>Item Name: Super Digital Camera</Modal.Header>
+        <Modal.Content image>
+          <Image wrapped size="medium" src="/images/avatar/large/rachel.png" />
+          <Modal.Description>
+            <Header>Item Price: May be</Header>
+            <p>ITEM Description and end it</p>
+            <p>Is it okay to use this photo?</p>
+          </Modal.Description>
+        </Modal.Content>
+      </Modal>
     </div>
   );
 };
