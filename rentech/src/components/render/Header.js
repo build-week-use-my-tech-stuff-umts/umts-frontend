@@ -1,6 +1,6 @@
 import React from "react";
-
-const ProfileHeader = props => {
+import { Route, Switch, NavLink } from "react-router-dom";
+const Header = props => {
   return (
     <div className="profile-header">
       <div className="flex-row">
@@ -9,13 +9,11 @@ const ProfileHeader = props => {
           alt="RenTech Logo"
           className="logo"
         />
-        <div className="greeting-col">
-          <h3>Log Out</h3>
-          <h2>Welcome Back, John</h2>
-        </div>
       </div>
+      <NavLink to="Login">Login</NavLink>
+      <NavLink to="CreateAccount">Create Account</NavLink>
     </div>
   );
 };
 
-export default ProfileHeader;
+export default Header;
