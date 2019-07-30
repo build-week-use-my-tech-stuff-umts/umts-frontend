@@ -1,5 +1,5 @@
 import React from "react";
-
+import EditAccount from "./EditAccount.js";
 const AccountInfo = props => {
   return (
     <div className="account">
@@ -11,7 +11,7 @@ const AccountInfo = props => {
       <div>City: Austin</div>
       <div>Phone: (111)222-3333</div>
       <div>Password: ********</div>
-      <div>BUTTON FOR EDIT PROFILE</div>
+      <EditAccount />
     </div>
   );
 };
