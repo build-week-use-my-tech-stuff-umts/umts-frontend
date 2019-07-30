@@ -19,6 +19,10 @@ const ItemCard = props => {
         <Card.Content extra>
         <Card.Header>Item Price: $100 per day</Card.Header>
         </Card.Content>
+            <Card.Content extra>
+        <Icon name='camera' />
+        Item Type: Insert Type prop
+    </Card.Content>
         <ItemPage />
       </Card>
     </div>

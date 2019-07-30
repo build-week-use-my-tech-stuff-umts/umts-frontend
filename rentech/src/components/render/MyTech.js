@@ -33,10 +33,14 @@ function MyTechItems() {
           </Card.Description>
         </Card.Content>
         <Card.Content extra>
-          <p>Price: $100.00</p>
+          <Card.Header>Price: $100.00</Card.Header>
         </Card.Content>
+                    <Card.Content extra>
+        <Icon name='camera' />
+        Item Type: Insert Type prop
+    </Card.Content>
         <div className='button-box'>
-<EditItem/>
+        <EditItem/>
           <Button color='red' size='small' className='techbutton'>Delete</Button>
         </div>
       </Card>

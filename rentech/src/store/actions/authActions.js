@@ -1,6 +1,6 @@
 import umtsApiWithAuth from '../../api/umtsApiWithAuth'
 import { types }from './index'
-
+import AccountInfo from '../../components/render/AccountInfo.js'
 //res.data.user.(insert thing i want here)
 //res.data.token
 
@@ -22,8 +22,8 @@ return umtsApiWithAuth()
         .catch(
           err => {
           dispatch({type: types.LOGIN_FAIL, payload: err.res.data})
-          console.log(err) 
-          } 
+          console.log(err)
+          }
         )
 };
 
@@ -39,7 +39,7 @@ export const doCreateAccount = newUserDetails => dispatch =>{
   .catch(
     err => console.log(err)
   )
-  
+
 };
 
 
