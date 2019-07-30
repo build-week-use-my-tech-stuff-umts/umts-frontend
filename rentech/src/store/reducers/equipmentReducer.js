@@ -1,7 +1,7 @@
 import { types } from "../actions";
 
 const initialState = {
-  tools: [
+  equipment: 
     {
       catId: null,
       description: "",
@@ -9,11 +9,8 @@ const initialState = {
       address: "",
       imageUrl: "",
       name: "",
-
-      userId: null,
-      status: ""
-    }
-  ],
+    },
+  
   isLoading: false,
   errors: null,
   isSuccess: true
@@ -69,12 +66,12 @@ export default (state = initialState, action) => {
         errors: null
       };
     case types.POST_EQUIP_LIST_SUCCESS:
-      const updatedPOSTEquipmentList = [...state.tools, payload];
+      const updatedPOSTEquipmentList = [...state.equipment, payload];
       return {
         ...state,
         isLoading: false,
         errors: null,
-        tools: updatedPOSTEquipmentList,
+        equipment: updatedPOSTEquipmentList,
         isSuccess: true
       };
     case types.POST_EQUIP_LIST_FAIL:
