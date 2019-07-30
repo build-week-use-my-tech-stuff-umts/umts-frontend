@@ -14,6 +14,11 @@ const ItemCardList = () => {
         <ItemCard />
         <ItemCard />
         <ItemCard />
+        <ItemCard />
+        <ItemCard />
+        <ItemCard />
+        <ItemCard />
+        <ItemCard />
       </div>
     </div>
   );

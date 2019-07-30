@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "./Header.js/index.js";
+import Header from "./Header.js";
 import LoginForm from "../forms/LoginForm.js";
-export default function Login() {
+export default function LoginCard() {
   return (
     <div>
       <Header />
