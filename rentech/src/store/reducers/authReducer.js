@@ -12,6 +12,7 @@ const initialState = {
 export default (state = initialState, action) => {
   const { type, payload } = action;
   switch (type) {
+
     case types.LOGIN_START:
       return {
         ...state,
@@ -27,7 +28,7 @@ export default (state = initialState, action) => {
         isLoading: false,
         isAuth: true,
         errors: null,
-        user: jwt_decode(payload.token),
+        user: payload.token,
         isSuccess: false
       };
     case types.LOGIN_FAIL:
@@ -39,6 +40,8 @@ export default (state = initialState, action) => {
         user: {},
         isSuccess: false
       };
+
+
 
     case types.CREATE_USER_START:
       return {
@@ -68,6 +71,8 @@ export default (state = initialState, action) => {
         isSuccess: false
       };
 
+
+
     case types.LOGOUT_START:
       return {
         ...state,
@@ -92,6 +97,8 @@ export default (state = initialState, action) => {
         isSuccess: false
       };
 
+
+      
     case types.WELCOME_BACK:
       const wbUser = jwt_decode(payload);
       return {

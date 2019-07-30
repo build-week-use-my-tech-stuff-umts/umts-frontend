@@ -1,10 +1,11 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import {connect} from 'react-redux';
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
-// import axios from "axios";
+import { doCreateAccount } from '../../store/actions/authActions'
 
-function RegFrm({ values, errors, touched, isSubmitting }) {
+
+function RegFrm({ values, errors, touched }) {
   return (
     <div className="form-card">
       <Form className="ui form">
@@ -153,6 +154,8 @@ function RegFrm({ values, errors, touched, isSubmitting }) {
   );
 }
 
+
+
 const RegistrationForm = withFormik({
   mapPropsToValues({
     firstName,
@@ -199,25 +202,22 @@ const RegistrationForm = withFormik({
       .max(5, "Zipcode cannot be longer than 5 numbers")
   }),
 
-  handleSubmit(values, { resetForm, setErrors, setSubmitting }) {
+
+
+  handleSubmit(values, formikBag) {
     if (values.email === "alreadytaken@atb.dev") {
-      setErrors({ email: "That email is already taken" });
+      formikBag.setErrors({ email: "That email is already taken" });
     } else if (values.tos === false) {
-      setErrors({ tos: "Please Accept the Terms of Service" });
+      formikBag.setErrors({ tos: "Please Accept the Terms of Service" });
     } else {
-      //   axios
-      //     .post("https://yourdatabaseurlgoeshere.com", values)
-      //     .then(res => {
-      //       console.log(res); // Data was created successfully and logs to console
-      //       resetForm();
-      //       setSubmitting(false);
-      //     })
-      //     .catch(err => {
-      //       console.log(err); // There was an error creating the data and logs to console
-      //       setSubmitting(false);
-      //     });
+      
+      formikBag.props.doCreateAccount(values)
       console.log(values);
     }
   }
 })(RegFrm);
-export default RegistrationForm;
+
+
+
+
+export default connect(null, {doCreateAccount})(RegistrationForm);

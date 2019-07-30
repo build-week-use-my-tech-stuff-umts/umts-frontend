@@ -1,13 +1,17 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { doSignIn } from '../../store/actions/authActions'
+import { connect } from 'react-redux'
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
-// import axios from "axios";
+ 
 
-function LogFrm({ values, errors, touched, isSubmitting }) {
+
+
+function LogFrm({ errors, touched }) {
   return (
     <div className="form-card">
       <Form className="ui form">
+
         <div className="field">
           <label htmlFor="email">
             Email
@@ -15,6 +19,7 @@ function LogFrm({ values, errors, touched, isSubmitting }) {
             <Field type="email" name="email" placeholder="Email" />
           </label>
         </div>
+
         <div className="field">
           <label htmlFor="password">
             Password
@@ -22,22 +27,29 @@ function LogFrm({ values, errors, touched, isSubmitting }) {
             <Field type="password" name="password" placeholder="Password" />
           </label>
         </div>
-        {/* disabled={isSubmitting}  ***Removed from submit button for testing***/}
+
         <button className="ui button" type="submit">
           Login
         </button>
+
       </Form>
     </div>
   );
 }
 
+
+
+
 const LoginForm = withFormik({
+
   mapPropsToValues({ email, password }) {
     return {
       email: email || "",
       password: password || ""
     };
   },
+
+
   validationSchema: Yup.object().shape({
     email: Yup.string()
       .email("Email not valid")
@@ -45,19 +57,13 @@ const LoginForm = withFormik({
     password: Yup.string().required("is required")
   }),
 
-  handleSubmit(values, { resetForm, setErrors, setSubmitting }) {
-    //   axios
-    //     .post("https://yourdatabaseurlgoeshere.com", values)
-    //     .then(res => {
-    //       console.log(res); // Data was created successfully and logs to console
-    //       resetForm();
-    //       setSubmitting(false);
-    //     })
-    //     .catch(err => {
-    //       console.log(err); // There was an error creating the data and logs to console
-    //       setSubmitting(false);
-    //     });
-    console.log(values);
+  handleSubmit(values, formikBag) {
+    console.log(formikBag)
+   formikBag.props.doSignIn(values)
   }
 })(LogFrm);
-export default LoginForm;
+
+
+
+
+export default connect(null, {doSignIn})(LoginForm);
