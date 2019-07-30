@@ -9,7 +9,7 @@ import rootReducer from "./store/reducers/index";
 import { authMiddleware } from "./customMiddleware/authMiddleware";
 import App from "./App";
 
-import "./index.scss";
+import "./scss/index.scss";
 
 //const store = createStore(rootReducer, applyMiddleware(thunk, authMiddleware));
 

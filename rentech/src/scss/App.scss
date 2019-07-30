@@ -5,10 +5,23 @@
   margin-left: 20px;
   margin-top: 20px;
   border: 1px solid black;
+  background-color: blue;
 
-  .flex-col {
+  .flex-row {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    width: 100%;
+  }
+
+  .greeting-col {
+    display: flex;
+    align-items: flex-end;
+  }
+  .logo {
+    height: 180px;
+    width: 180px;
   }
 }
 .profile-header h1 {

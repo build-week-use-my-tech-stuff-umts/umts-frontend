@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.scss";
+import "./scss/App.scss";
 
 //Components
 import ProfileHeader from "./components/render/ProfileHeader";

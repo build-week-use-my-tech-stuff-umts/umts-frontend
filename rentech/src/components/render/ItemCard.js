@@ -7,7 +7,11 @@ const ItemCard = props => {
   return (
     <div className="item-card">
       <Card>
-        <Image src="/images/avatar/large/matthew.png" wrapped ui={false} />
+        <Image
+          src={require("../../img/camera-macro-optics-122400.jpg")}
+          wrapped
+          ui={false}
+        />
         <Card.Content>
           <Card.Header>Item Name: Super Digital Camera</Card.Header>
           <Card.Description>
