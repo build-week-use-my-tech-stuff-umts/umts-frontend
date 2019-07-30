@@ -35,6 +35,10 @@ const panes = [
   }
 ];
 
-const NavBar = () => <Tab panes={panes} renderActiveOnly={false} />;
+const NavBar = () => (
+  <div className="nav-container">
+    <Tab panes={panes} renderActiveOnly={false} />
+  </div>
+);
 
 export default NavBar;

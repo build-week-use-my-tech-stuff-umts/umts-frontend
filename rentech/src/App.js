@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <NavBar className="nav-bar" />
+      <NavBar />
       <ItemCardList />
     </div>
   );
