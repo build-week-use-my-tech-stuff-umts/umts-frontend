@@ -21,14 +21,17 @@
     align-items: flex-end;
   }
   .logo {
-    height: 180px;
-    width: 180px;
+    height: auto;
+    width: 20%;
   }
 }
 .profile-header h1 {
   font-size: 3rem;
 }
 .account {
+  margin: 0 auto;
+  width: 50%;
+
   h2 {
     font-size: 5rem;
   }
@@ -37,6 +40,20 @@
   line-height: 4rem;
   border: 1px solid black;
 }
+
+.tech-container {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+
+  .myTech-item {
+    margin: 20px;
+    box-shadow: 7px 5px 18px #333;
+  }
+}
+
 nav {
   margin-left: 20px;
   margin-top: 20px;
