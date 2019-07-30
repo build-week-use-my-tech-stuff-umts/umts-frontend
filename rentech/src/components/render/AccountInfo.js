@@ -11,6 +11,7 @@ const AccountInfo = props => {
       <div>Address: 123 Waywerd lane</div>
       <div>State: TX</div>
       <div>City: Austin</div>
+      <div>Zip: 99999</div>
       <div>Phone: (111)222-3333</div>
       <div>Password: ********</div>
     </div>

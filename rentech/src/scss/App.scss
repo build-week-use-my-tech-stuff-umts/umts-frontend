@@ -37,16 +37,19 @@
   margin: 1% auto;
   width: 80%;
 
+
   h2 {
     font-size: 5rem;
   }
-  font-size: 2.5rem;
-  line-height: 4rem;
+  font-size: 1.7rem;
+  line-height: 3.5rem;
 }
 .account-header{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    border-bottom: 1px solid $dark;
+    margin-bottom: 2rem;
 }
   .edit-account{
 margin-top: 1%;
@@ -100,8 +103,6 @@ nav a {
   margin-top: 10px;
   margin-left: 20px;
   width: 80%;
-
-  width: 80%;
   margin: 0 auto;
 
   .item-list {
@@ -127,7 +128,7 @@ nav a {
 }
 .float-right{
     float:right;
-    margin: 2% 4%;
+    margin: 0px 4%;
    .login{
        margin-right:3%;
        padding-bottom: 1rem;
@@ -139,3 +140,6 @@ nav a {
     justify-content: center;
     padding-bottom: 0.5rem;
 }
+// .blue-button{
+//     padding-top:10px;
+// }

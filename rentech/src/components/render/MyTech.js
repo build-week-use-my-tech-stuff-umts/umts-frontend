@@ -36,8 +36,8 @@ function MyTechItems() {
           <p>Price: $100.00</p>
         </Card.Content>
         <div className='button-box'>
-
-          <Button color='red'>Delete</Button>
+<EditItem/>
+          <Button color='red' size='small' className='techbutton'>Delete</Button>
         </div>
       </Card>
     </div>
