@@ -13,11 +13,7 @@ import MyTechList from "./components/render/MyTech";
 function App() {
   return (
     <div className="App">
-      <ProfileHeader />
-      <NavBar />
-      <ItemCardList />
-      <AccountInfo />
-      <MyTechList />
+
     </div>
   );
 }
