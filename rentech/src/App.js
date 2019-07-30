@@ -3,19 +3,18 @@ import "./scss/App.scss";
 
 //Components
 import Header from "./components/render/Header.js";
-import CreateAcctCard from "./components/render/CreateAcctCard.js";
-import ItemCardList from "./components/render/ItemCardList.js";
+
 //Styles
 import "semantic-ui-css/semantic.min.css";
-import { Item } from "semantic-ui-react";
 import NavBar from "./components/render/NavBar";
+import AppRouter from "./components/render/AppRouter";
 
 function App() {
   return (
     <div className="App">
       <Header />
       <NavBar />
-      <ItemCardList />
+      <AppRouter />
     </div>
   );
 }

@@ -2,7 +2,7 @@ import React from "react";
 import ItemCard from "./ItemCard";
 
 //This component is rendering elements for 'Explore Tech'
-const ItemCardList = () => {
+const Marketplace = () => {
   // GET Request for item card data
   return (
     <div className="items">
@@ -24,4 +24,4 @@ const ItemCardList = () => {
   );
 };
 
-export default ItemCardList;
+export default Marketplace;

@@ -11,21 +11,19 @@ const createLabel = (iconName, labelText) => (
   </span>
 );
 
-const welcomeLabel = createLabel("home", "Home Page");
 const accountLabel = createLabel("users", "Account Settings");
 const myTechLabel = createLabel("computer", "My Tech");
 const exploreTechLabel = createLabel("shop", "Explore Tech for Rent");
 
 const panes = [
   {
-    menuItem: <Menu.Item key="home" as={Nav} to={`/`} content={welcomeLabel} />
-  },
-  {
-    menuItem: <Menu.Item key="users" as={Nav} to={`/`} content={accountLabel} />
+    menuItem: (
+      <Menu.Item key="users" as={Nav} to={`/account`} content={accountLabel} />
+    )
   },
   {
     menuItem: (
-      <Menu.Item key="computer" as={Nav} to={`/`} content={myTechLabel} />
+      <Menu.Item key="computer" as={Nav} to={`/mytech`} content={myTechLabel} />
     )
   },
   {
