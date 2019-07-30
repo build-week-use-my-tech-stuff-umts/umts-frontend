@@ -21,7 +21,7 @@ const ItemCard = props => {
         <Card.Content extra>
           <a>
             <Icon name="email" />
-            Message User
+            Message User NEEDS WORKS
           </a>
         </Card.Content>
         <ItemPage />
