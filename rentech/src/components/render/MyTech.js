@@ -25,7 +25,7 @@ function MyTechItems() {
   return (
     <div className="myTech-item">
       <Card>
-        <Image src="/images/avatar/large/matthew.png" wrapped ui={false} />
+        <Image src={require("../../img/camera-macro-optics-122400.jpg")} wrapped ui={false} />
         <Card.Content>
           <Card.Header>Item Name: Super Digital Camera</Card.Header>
           <Card.Description>
@@ -35,9 +35,9 @@ function MyTechItems() {
         <Card.Content extra>
           <p>Price: $100.00</p>
         </Card.Content>
-        <div>
-          <EditItem />
-          <Button secondary>Delete</Button>
+        <div className='button-box'>
+
+          <Button color='red'>Delete</Button>
         </div>
       </Card>
     </div>
