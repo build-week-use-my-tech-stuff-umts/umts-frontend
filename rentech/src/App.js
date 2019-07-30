@@ -11,11 +11,7 @@ import AccountInfo from "./components/render/AccountInfo";
 import MyTechList from "./components/render/MyTech";
 
 function App() {
-  return (
-    <div className="App">
-
-    </div>
-  );
+  return <div className="App">MASTER BRANCH</div>;
 }
 
 export default App;
