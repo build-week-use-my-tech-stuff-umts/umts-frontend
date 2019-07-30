@@ -1,6 +1,5 @@
 import React from "react";
 import { Card, Image, Icon } from "semantic-ui-react";
-import ProfileHeader from "./ProfileHeader";
 import ItemPage from "./ItemPage";
 
 const ItemCard = props => {
@@ -20,7 +19,7 @@ const ItemCard = props => {
         </Card.Content>
         <Card.Content extra>
           <a>
-            <Icon name="email" />
+            <Icon name="mail" />
             Message User NEEDS WORKS
           </a>
         </Card.Content>

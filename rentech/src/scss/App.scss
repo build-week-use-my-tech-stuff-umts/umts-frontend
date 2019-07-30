@@ -1,11 +1,12 @@
+@import "variables";
+
 .profile-header {
   font-size: 1.5rem;
   display: flex;
   justify-content: space-between;
-  margin-left: 20px;
-  margin-top: 20px;
-  border: 1px solid black;
-  background-color: blue;
+  margin: 0 auto;
+  border-bottom: 5px solid $dark;
+  background-color: $lighter;
 
   .flex-row {
     display: flex;
@@ -20,14 +21,17 @@
     align-items: flex-end;
   }
   .logo {
-    height: 180px;
-    width: 180px;
+    height: auto;
+    width: 20%;
   }
 }
 .profile-header h1 {
   font-size: 3rem;
 }
 .account {
+  margin: 0 auto;
+  width: 50%;
+
   h2 {
     font-size: 5rem;
   }
@@ -36,25 +40,61 @@
   line-height: 4rem;
   border: 1px solid black;
 }
+
+.tech-container {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+
+  .myTech-item {
+    margin: 20px;
+    box-shadow: 7px 5px 18px #333;
+  }
+}
+
 nav {
   margin-left: 20px;
   margin-top: 20px;
   border: 1px solid blue;
+  padding-bottom: rem;
 }
 nav a {
   padding: 5px;
 }
-.item-list {
-  display: flex;
+
+.nav-container {
+  margin: 0 auto;
+  width: 80%;
 }
-.item-card {
-  margin: 20px;
-}
+
 .items {
   margin-top: 10px;
   margin-left: 20px;
-  border: 1px solid orange;
+  width: 80%;
+
+  width: 80%;
+  margin: 0 auto;
+
+  .item-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: white;
+    justify-content: space-between;
+
+    .item-card {
+      margin: 20px;
+      box-shadow: 7px 5px 18px #333;
+    }
+  }
 }
+
 .add-button-mytech {
   font-size: 2rem;
+}
+.form-card {
+  width: 50%;
+  margin: 1% auto;
 }

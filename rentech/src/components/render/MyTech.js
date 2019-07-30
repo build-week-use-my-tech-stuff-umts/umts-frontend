@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, Image, Icon, Button } from "semantic-ui-react";
-
+import AddItem from "./AddItem.js";
+import EditItem from "./EditItem.js";
 const MyTechList = () => {
   return (
     <div className="tech-container">
@@ -8,9 +9,7 @@ const MyTechList = () => {
       <div className="myTech-list">
         {/* Map out given user items */}
         <MyTechItems />
-        <Button className="add-button-mytech" size="massive">
-          BIG BUTTON TO ADD ITEMS
-        </Button>
+        <AddItem />
       </div>
     </div>
   );
@@ -31,7 +30,7 @@ function MyTechItems() {
           <p>Price: $100.00</p>
         </Card.Content>
         <div>
-          <Button primary>Edit</Button>
+          <EditItem />
           <Button secondary>Delete</Button>
         </div>
       </Card>
