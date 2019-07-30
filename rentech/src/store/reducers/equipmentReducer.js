@@ -9,7 +9,6 @@ const initialState = {
       address: "",
       imageUrl: "",
       name:"",
-
       userId: null,
       status: ""
     }
