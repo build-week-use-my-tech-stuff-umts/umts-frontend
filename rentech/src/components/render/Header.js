@@ -1,6 +1,6 @@
 import React from "react";
 import Logo from "../../img/rentech-logo-new.png";
-import { Route, Switch, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 const Header = props => {
   return (
     <div className="profile-header">
@@ -9,7 +9,7 @@ const Header = props => {
 
         <div className='link-container'>
 
-        <NavLink className='login' to="/login">Logout</NavLink>
+        <NavLink onClick= {()=> {localStorage.removeItem('token')}} className='login' to="/login">Logout</NavLink>
         <NavLink className='login' to="/login">Login</NavLink>
         <NavLink to="createaccount">Create Account</NavLink>
       </div>
