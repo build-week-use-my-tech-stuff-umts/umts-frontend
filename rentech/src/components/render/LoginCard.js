@@ -1,10 +1,10 @@
 import React from "react";
 import Header from "./Header.js";
 import LoginForm from "../forms/LoginForm.js";
-export default function LoginCard() {
+export default function LoginCard(props) {
   return (
     <div>
-      <LoginForm />
+      <LoginForm props={props}/>
     </div>
   );
 }

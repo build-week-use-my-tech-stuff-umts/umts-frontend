@@ -1,4 +1,3 @@
-import {umtsApi} from '../../api/umtsApi';
 import {umtsApiWithAuth} from '../../api/umtsApiWithAuth';
 
 import { types }from './index'
