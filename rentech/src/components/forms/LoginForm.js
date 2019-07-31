@@ -3,6 +3,7 @@ import { doSignIn } from '../../store/actions/authActions'
 import { connect } from 'react-redux'
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
+import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 
 
 
@@ -32,7 +33,7 @@ function LogFrm({ errors, touched }) {
         <button className="ui button" type="submit">
           Login
         </button>
-
+        <NavLink to="/createaccount"><button className="ui button">Create Account</button></NavLink>
 
       </Form>
     </div>
