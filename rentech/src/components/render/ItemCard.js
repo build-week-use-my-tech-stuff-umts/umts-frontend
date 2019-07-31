@@ -2,12 +2,14 @@ import React from "react";
 import { Card, Image, Icon, Modal, Header, Button } from "semantic-ui-react";
 
 const ItemCard = props => {
-  console.log(props.rentItem);
+  // console.log(props.rentItem);
   return (
     <div className="item-card">
       <Card>
         <Image
           src={require("../../img/camera-macro-optics-122400.jpg")}
+          // src={props.rentItem.category.image}
+          //  uncomment this after BE fix 
           wrapped
           ui={false}
         />
@@ -26,22 +28,25 @@ const ItemCard = props => {
         {/* {props.rentItem.category.name} */}
         {/* uncomment this after BE fix */}
     </Card.Content>
-        <ItemPage />
+        <ItemPage props={props}/>
       </Card>
     </div>
   );
 };
 
-const ItemPage = () => {
+const ItemPage = props => {
+  console.log(props.props.rentItem);
   return (
     <div className="item-page">
       <Modal trigger={<Button color='blue'>View Details</Button>}>
-        <Modal.Header>Item Name Props</Modal.Header>
+        <Modal.Header>{props.props.rentItem.name}</Modal.Header>
         <Modal.Content image>
           <Image wrapped size="medium" src={require("../../img/camera-macro-optics-122400.jpg")} />
+          {/* src={props.props.rentItem.category.image}
+          uncomment this after BE fix */}
           <Modal.Description>
-            <Header>Item Price Props $00.00</Header>
-            <p>ITEM Description Props</p>
+            <Header>${props.props.rentItem.price} per day</Header>
+            <p>{props.props.rentItem.description}</p>
           </Modal.Description>
         </Modal.Content>
       </Modal>
