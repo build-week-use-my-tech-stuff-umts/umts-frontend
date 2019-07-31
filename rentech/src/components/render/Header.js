@@ -1,7 +1,6 @@
 import React from "react";
 import Logo from "../../img/rentech-logo-new.png";
 import { NavLink } from "react-router-dom";
-import PopupExampleControlled from './PopUp';
 const Header = props => {
   return (
     <div className="profile-header">
@@ -9,8 +8,6 @@ const Header = props => {
         <div className='float-right'>
 
         <div className='link-container'>
-
-        <PopupExampleControlled/>
 
         <NavLink onClick= {()=> {localStorage.removeItem('token')}} className='login' to="/login">Logout</NavLink>
         <NavLink className='login' to="/login">Login</NavLink>

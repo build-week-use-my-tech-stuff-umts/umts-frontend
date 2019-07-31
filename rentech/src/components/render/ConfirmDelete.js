@@ -8,8 +8,8 @@ const ConfirmDelete = () => {
       <Modal size='mini' trigger={<Button color="red" size='small' >Delete</Button>}>
         <Modal.Header>U Sure Bro?</Modal.Header>
         <Modal.Content>
-          <Button type='submit'>Fuck Yeah</Button>
-          <Button type='submit'>Hell Nah</Button>
+          <Button type='submit' positive>Fuck Yeah</Button>
+          <Button type='close' negative>Hell Nah</Button>
         </Modal.Content>
       </Modal>
     </div>
