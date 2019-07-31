@@ -2,6 +2,7 @@ import React from "react";
 import { Card, Image, Icon, Button } from "semantic-ui-react";
 import AddItem from "./AddItem.js";
 import EditItem from "./EditItem.js";
+import ConfirmDelete from './ConfirmDelete.js'
 const MyTechList = () => {
   return (
     <div>
@@ -40,9 +41,7 @@ function MyTechItems() {
         </Card.Content>
         <div className="button-box">
           <EditItem />
-          <Button color="red" size="small" className="techbutton">
-            Delete
-          </Button>
+          <ConfirmDelete />
         </div>
       </Card>
     </div>

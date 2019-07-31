@@ -13,6 +13,7 @@ const Header = props => {
             <NavLink className='footer-nav' to=''>About the Team</NavLink>
             <Icon className='footer-nav' size='large' name='html5' />
             <Icon className='footer-nav' size='large' name='js square' />
+            <p>©2019 RenTech --- Dj-Ad-Sky</p>
         </div>
     );
 };
