@@ -48,7 +48,7 @@ export default NavBar;
 
 // would like to implament below nav bar.
 
-/*  
+/*  yea new nav
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { Menu } from 'semantic-ui-react'
@@ -107,4 +107,5 @@ const MenuExampleColoredInvertedMenus = () => {
 }
 
 export default MenuExampleColoredInvertedMenus
+
 */
