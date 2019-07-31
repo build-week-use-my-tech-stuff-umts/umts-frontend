@@ -13,7 +13,7 @@ const AppRouter = () => {
         <Route path="/mytech" component={MyTech} />
         <Route path="/account" component={AccountInfo} />
 
-  <Route path='/createaccount' render={props => <CreateAcctCard {...props} /> } />
+        <Route path='/createaccount' render={props => <CreateAcctCard {...props} /> } />
         <Route path='/login' render={props => <LoginCard {...props}/> } />
 
       </Switch>
