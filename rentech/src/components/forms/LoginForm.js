@@ -59,11 +59,12 @@ const LoginForm = withFormik({
   }),
 
   handleSubmit(values, formikBag) {
-    console.log(formikBag)
-   formikBag.props.doSignIn(values)
+  console.log(formikBag);
+  formikBag.props.doSignIn(values)
+  .then(() => {formikBag.props.props.history.push("/mytech")});
   }
-})(LogFrm);
 
+})(LogFrm);
 
 
 

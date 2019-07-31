@@ -8,7 +8,7 @@ const Header = props => {
         <div className='float-right'>
 
         <div className='link-container'>
-        <NavLink className='login' to="login">Login</NavLink>
+        <NavLink className='login' to="/login">Login</NavLink>
         <NavLink to="createaccount">Create Account</NavLink>
       </div>
 
