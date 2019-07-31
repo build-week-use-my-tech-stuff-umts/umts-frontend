@@ -46,15 +46,25 @@ body {
       flex-direction: row;
       justify-content: space-around;
 
-      .link {
+      a {
         // margin-right: 3%;
         // text-align: right;
-        font-size: 1.2rem;
-        padding: 2rem 0.5rem;
+        color: white;
+        @include easeOut;
+
+        &:hover {
+        color: $dark;
+      }
       }
     }
   }
 }
+
+.menu {
+    background-color: $lighter !important;
+    border-radius: 0 !important;
+}
+
 .profile-header h1 {
   font-size: 3rem;
 }

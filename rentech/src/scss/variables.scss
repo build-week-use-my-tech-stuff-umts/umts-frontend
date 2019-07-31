@@ -3,3 +3,9 @@ $lighter: #18314f;
 $light: #384e77;
 $primary: #ef6f6c;
 $secondary: #8bbeb2;
+
+@mixin easeOut {
+  transition: all 0.25s ease-out;
+}
+
+
