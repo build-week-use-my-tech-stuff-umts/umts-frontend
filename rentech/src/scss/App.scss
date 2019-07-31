@@ -46,12 +46,16 @@ body {
       flex-direction: row;
       justify-content: space-around;
 
+
+
       a {
         // margin-right: 3%;
         // text-align: right;
         color: white;
         @include easeOut;
         // display: none;
+
+
 
         &:hover {
         color: $dark;
@@ -208,3 +212,12 @@ nav a {
     margin: 3% 2%;
 }
 }
+
+// .logout {
+//     display: none;
+// }
+
+// .show-link {
+//           display: block;
+//       }
+

@@ -25,7 +25,7 @@ class LogOutPopOut extends React.Component {
       <Grid>
         <Grid.Column width={8}>
           <Popup
-            trigger={<NavLink onClick= {()=> {localStorage.removeItem('token')}} className='login' to="/login">Logout</NavLink>}
+            trigger={<NavLink onClick= {()=> {localStorage.removeItem('token')}} className='logout' to="/login">Logout</NavLink>}
             content={`You have been Logged out`}
             on='click'
             open={this.state.isOpen}
