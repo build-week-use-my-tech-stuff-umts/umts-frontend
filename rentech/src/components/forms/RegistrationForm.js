@@ -213,7 +213,9 @@ const RegistrationForm = withFormik({
     } else {
       
       formikBag.props.doCreateAccount(values)
+       .then(() => {formikBag.props.props.history.push("/mytech")});
       console.log(values);
+
     }
   }
 })(RegFrm);
