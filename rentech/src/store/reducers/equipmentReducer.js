@@ -1,16 +1,7 @@
 import { types } from "../actions";
 
 const initialState = {
-  equipment: 
-    {
-      catId: null,
-      description: "",
-      price: "",
-      address: "",
-      imageUrl: "",
-      name: "",
-    },
-  
+  rentItems: [],
   isLoading: false,
   errors: null,
   isSuccess: true
@@ -19,6 +10,7 @@ const initialState = {
 export default (state = initialState, action) => {
   const { type, payload } = action;
   switch (type) {
+
     case types.GET_EQUIP_LIST_START:
       return {
         ...state,
@@ -30,14 +22,17 @@ export default (state = initialState, action) => {
         ...state,
         isLoading: false,
         errors: null,
-        equipment: payload
+        rentItems: action.payload
       };
     case types.GET_EQUIP_LIST_FAIL:
       return {
         ...state,
         isLoading: false,
-        errors: payload
+        errors: payload.err
       };
+
+
+
 
     case types.GET_EQUIP_ITEM_START:
       return {
@@ -50,7 +45,7 @@ export default (state = initialState, action) => {
         ...state,
         isLoading: false,
         errors: null,
-        equipment: payload
+        rentItems: payload
       };
     case types.GET_EQUIP_ITEM_FAIL:
       return {
@@ -71,7 +66,7 @@ export default (state = initialState, action) => {
         ...state,
         isLoading: false,
         errors: null,
-        equipment: updatedPOSTEquipmentList,
+        rentItems: updatedPOSTEquipmentList,
         isSuccess: true
       };
     case types.POST_EQUIP_LIST_FAIL:

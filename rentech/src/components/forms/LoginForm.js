@@ -59,13 +59,20 @@ const LoginForm = withFormik({
   }),
 
   handleSubmit(values, formikBag) {
-  console.log(formikBag);
+  // console.log(formikBag);
   formikBag.props.doSignIn(values)
   .then(() => {formikBag.props.props.history.push("/mytech")});
   }
 
 })(LogFrm);
 
+
+
+
+// const mapPropsToState= (state) => ({
+//   ...state,
+//   user: state.authReducer.user
+// })
 
 
 export default connect(null, {doSignIn})(LoginForm);

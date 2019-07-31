@@ -2,6 +2,7 @@ import React from "react";
 import { Card, Image, Icon, Modal, Header, Button } from "semantic-ui-react";
 
 const ItemCard = props => {
+  console.log(props.rentItem);
   return (
     <div className="item-card">
       <Card>
@@ -11,17 +12,19 @@ const ItemCard = props => {
           ui={false}
         />
         <Card.Content>
-          <Card.Header>Item Name Props</Card.Header>
+          <Card.Header>{props.rentItem.name}</Card.Header>
           <Card.Description>
-            Item Description Props
+            {props.rentItem.description}
           </Card.Description>
         </Card.Content>
         <Card.Content extra>
-        <Card.Header>Item Price Props $000.00</Card.Header>
+        <Card.Header>${props.rentItem.price} per day</Card.Header>
         </Card.Content>
             <Card.Content extra>
         <Icon name='camera' />
-        Item Type: Insert Type prop
+        
+        {/* {props.rentItem.category.name} */}
+        {/* uncomment this after BE fix */}
     </Card.Content>
         <ItemPage />
       </Card>

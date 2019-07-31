@@ -1,22 +1,31 @@
-import {umtsApiWithAuth} from '../../api/umtsApiWithAuth';
-
+import umtsApiWithAuth from '../../api/umtsApiWithAuth';
 import { types }from './index'
+
+
 //res.data.rentItems  ===returned list
 //res.data.item  ===new item created
 
 
-export const getEquipmentList = () => async dispatch =>{
+export const getEquipmentList = () => dispatch => {
+
   dispatch({ type: types.GET_EQUIP_LIST_START});
+  return umtsApiWithAuth()
+    .get('/rentItems')
+    .then(res => {
+      console.log(res.data.rentItems)
+      dispatch({type: types.GET_EQUIP_LIST_SUCCESS, payload: res.data.rentItems})
 
-  try {
-    const res = await umtsApiWithAuth.get('/rentItems');
-
-    dispatch({type: types.GET_EQUIP_LIST_SUCCESS, payload: res.data});
-
-  } catch (error) {
-    dispatch({type: types.GET_EQUIP_LIST_FAIL, payload: error});
-  }
+    })
+    .catch(err => {
+      dispatch({type: types.GET_EQUIP_LIST_FAIL, payload: err})
+      
+    })
 };
+
+
+
+
+
 
 export const getEquipmentItem = (id) => async dispatch =>{
   dispatch({ type: types.GET_EQUIP_START});
@@ -30,6 +39,12 @@ export const getEquipmentItem = (id) => async dispatch =>{
     dispatch({type: types.GET_EQUIP_FAIL, payload: error});
   }
 };
+
+
+
+
+
+
 
 
 export const postEquipment = equipment => async dispatch =>{
@@ -46,6 +61,13 @@ export const postEquipment = equipment => async dispatch =>{
 };
 
 
+
+
+
+
+
+
+
 export const editEquipment = equipment => async dispatch =>{
   dispatch({ type: types.PUT_EQUIP_ITEM_START});
 
@@ -58,6 +80,10 @@ export const editEquipment = equipment => async dispatch =>{
     dispatch({type: types.PUT_EQUIP_ITEM_FAIL, payload: error});
   }
 };
+
+
+
+
 
 
 
