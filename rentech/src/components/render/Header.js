@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../../img/rentech-logo.png";
+import Logo from "../../img/rentech-logo-new.png";
 import { Route, Switch, NavLink } from "react-router-dom";
 const Header = props => {
   return (
@@ -8,6 +8,8 @@ const Header = props => {
         <div className='float-right'>
 
         <div className='link-container'>
+
+        <NavLink className='login' to="/login">Logout</NavLink>
         <NavLink className='login' to="/login">Login</NavLink>
         <NavLink to="createaccount">Create Account</NavLink>
       </div>

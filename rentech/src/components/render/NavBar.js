@@ -28,7 +28,7 @@ const panes = [
   },
   {
     menuItem: (
-      <Menu.Item key="shop" as={Nav} to={`/`} content={exploreTechLabel} />
+      <Menu.Item key="shop" as={Nav} to={`/marketplace`} content={exploreTechLabel} />
     )
   }
 ];

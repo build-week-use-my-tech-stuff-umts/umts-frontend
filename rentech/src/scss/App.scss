@@ -5,7 +5,7 @@
 //   display: flex;
   justify-content: space-between;
   margin: 0 auto;
-  border-bottom: 5px solid $dark;
+  border-bottom: 7px solid $dark;
   background-color: $lighter;
 
   .flex-row {
@@ -22,7 +22,7 @@
   }
   .logo {
     height: auto;
-    width: 20%;
+    width: 230px;
   }
 
   .link-container {
@@ -37,16 +37,19 @@
   margin: 1% auto;
   width: 80%;
 
+
   h2 {
     font-size: 5rem;
   }
-  font-size: 2.5rem;
-  line-height: 4rem;
+  font-size: 1.7rem;
+  line-height: 3.5rem;
 }
 .account-header{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    border-bottom: 1px solid $dark;
+    margin-bottom: 2rem;
 }
   .edit-account{
 margin-top: 1%;
@@ -74,12 +77,17 @@ margin-top: 1%;
         padding-left: 1rem;
         justify-content: space-around;
         padding: 1rem;
+
+        .blue {
+          background-color: $lighter !important;
+      }
+
+        .red {
+            background-color: $primary !important;
+        }
     }
   }
 }
-// .blue-button   {
-//           padding-top: 1rem!important;
-//         }
 
 nav {
   margin-left: 20px;
@@ -100,8 +108,6 @@ nav a {
   margin-top: 10px;
   margin-left: 20px;
   width: 80%;
-
-  width: 80%;
   margin: 0 auto;
 
   .item-list {
@@ -114,6 +120,10 @@ nav a {
     .item-card {
       margin: 20px;
       box-shadow: 7px 5px 18px #333;
+
+      .blue {
+          background-color: $lighter !important;
+      }
     }
   }
 }
@@ -127,10 +137,10 @@ nav a {
 }
 .float-right{
     float:right;
-    margin: 2% 4%;
+    margin: 0px 4%;
    .login{
        margin-right:3%;
-       padding-bottom: 1rem;
+       padding-bottom: 0.4rem;
    }
 }
 

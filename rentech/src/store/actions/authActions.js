@@ -1,6 +1,5 @@
 import umtsApiWithAuth from '../../api/umtsApiWithAuth'
 import { types }from './index'
-
 //res.data.user.(insert thing i want here)
 //res.data.token
 
@@ -8,7 +7,9 @@ export const doSignIn = credentials => dispatch => {
 
   dispatch({ type: types.LOGIN_START});
 
-  return umtsApiWithAuth()
+
+        
+ return umtsApiWithAuth()
     .post('/auth/login', credentials)
     .then(
       res => {
@@ -16,13 +17,13 @@ export const doSignIn = credentials => dispatch => {
         localStorage.setItem('token', (res.data.token));
         dispatch({type: types.LOGIN_SUCCESS, payload: res.data.token});
       }
-    )
-    .catch(
-      err => {
-      dispatch({type: types.LOGIN_FAIL, payload: err})
-      console.log(err) 
-      } 
-    )
+    ).catch(
+          err => {
+          dispatch({type: types.LOGIN_FAIL, payload: err.res.data})
+          console.log(err)
+          }
+        )
+
 };
 
 export const doCreateAccount = newUserDetails => dispatch =>{
@@ -40,7 +41,7 @@ export const doCreateAccount = newUserDetails => dispatch =>{
        console.log(err)
     } 
   )
-  
+
 };
 
 export const doSignOut = () => dispatch =>{

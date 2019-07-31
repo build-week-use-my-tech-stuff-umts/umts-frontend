@@ -9,11 +9,13 @@ const AppRouter = () => {
   return (
     <div className="page-view bottom attached segment active tab">
       <Switch>
-        <Route exact path="/" component={Marketplace} />
+        <Route path="/marketplace" component={Marketplace} />
         <Route path="/mytech" component={MyTech} />
         <Route path="/account" component={AccountInfo} />
+
   <Route path='/createaccount' render={props => <CreateAcctCard {...props} /> } />
         <Route path='/login' render={props => <LoginCard {...props}/> } />
+
       </Switch>
     </div>
   );
