@@ -1,14 +1,18 @@
 import React from "react";
 import EditAccount from "./EditAccount.js";
-import ChangePass from './ChangePass.js'
+import ChangePass from "./ChangePass.js";
 const AccountInfo = props => {
   return (
     <div className="account">
       {/* Plug in the user details in respective forms */}
-     <div className='account-header'> <h2>Account Information</h2>
-       <EditAccount />
-        <ChangePass/>
-    </div>
+      <div className="account-header">
+        {" "}
+        <h2>Account Information</h2>
+        <div className="flex-col">
+          <EditAccount />
+          <ChangePass />
+        </div>
+      </div>
       <div>Name: User Name Props</div>
       <div>Address: User Address Props</div>
       <div>State: User U.S. State Props</div>

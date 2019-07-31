@@ -6,12 +6,18 @@ import NewPass from "../forms/UpdatePassword.js";
 const ChangePass = () => {
   return (
     <div className="edit-account">
-      <Modal trigger={<Button size="massive" color='red'>Update Password</Button>}>
+      <Modal
+        trigger={
+          <Button size="huge" color="red">
+            Update Password
+          </Button>
+        }
+      >
         <Modal.Header>Update your Password</Modal.Header>
         <Modal.Content>
-        <NewPass />
+          <NewPass />
         </Modal.Content>
-        </Modal>
+      </Modal>
     </div>
   );
 };

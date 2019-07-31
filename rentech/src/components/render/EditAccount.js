@@ -6,7 +6,13 @@ import EditProfileForm from "../forms/EditProfileForm.js";
 const EditAccount = () => {
   return (
     <div className="edit-account">
-      <Modal trigger={<Button size="massive" color='blue'>Edit Account</Button>}>
+      <Modal
+        trigger={
+          <Button size="huge" color="blue">
+            Edit Account
+          </Button>
+        }
+      >
         <Modal.Header>Edit your Account Information</Modal.Header>
         <Modal.Content>
           <EditProfileForm />
