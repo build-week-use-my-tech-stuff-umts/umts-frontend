@@ -5,13 +5,15 @@ import MyTech from "./MyTech";
 import AccountInfo from "./AccountInfo";
 import LoginCard from './LoginCard';
 import CreateAcctCard from './CreateAcctCard'
+import PrivateRoute from './PrivateRoute'
 const AppRouter = () => {
   return (
     <div className="page-view bottom attached segment active tab">
+
       <Switch>
-        <Route path="/marketplace" component={Marketplace} />
-        <Route path="/mytech" component={MyTech} />
-        <Route path="/account" component={AccountInfo} />
+        <PrivateRoute path="/marketplace" component={Marketplace} />
+        <PrivateRoute path="/mytech" component={MyTech} />
+        <PrivateRoute path="/account" component={AccountInfo} />
 
         <Route path='/createaccount' render={props => <CreateAcctCard {...props} /> } />
         <Route path='/login' render={props => <LoginCard {...props}/> } />
@@ -20,5 +22,6 @@ const AppRouter = () => {
     </div>
   );
 };
+
 
 export default AppRouter;

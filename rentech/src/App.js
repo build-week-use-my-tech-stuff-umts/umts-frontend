@@ -14,8 +14,10 @@ function App() {
     <div className="App">
       <Header />
       <NavBar />
-      <AppRouter />
-        <Footer />
+      <div className='router-container' >
+        <AppRouter />
+      </div>
+      <Footer />
     </div>
   );
 }
