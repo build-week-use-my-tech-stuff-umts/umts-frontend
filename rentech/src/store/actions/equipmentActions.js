@@ -7,94 +7,77 @@ import { types }from './index'
 
 
 export const getEquipmentList = () => dispatch => {
-
   dispatch({ type: types.GET_EQUIP_LIST_START});
   return umtsApiWithAuth()
     .get('/rentItems')
     .then(res => {
-      console.log(res.data.rentItems)
+      // console.log(res.data.rentItems)
       dispatch({type: types.GET_EQUIP_LIST_SUCCESS, payload: res.data.rentItems})
-
     })
     .catch(err => {
       dispatch({type: types.GET_EQUIP_LIST_FAIL, payload: err})
-      
+    })
+};
+
+export const getMyEquipmentItem = () => dispatch =>{
+  
+  // console.log( types.GET_MY_EQUIP_ITEM_START)
+  dispatch({ type: types.GET_MY_EQUIP_ITEM_START});
+  return umtsApiWithAuth()
+    .get('/auth/user')
+    .then(res => {
+      // console.log(res.data.user.rentItems)
+      dispatch({type: types.GET_MY_EQUIP_ITEM_SUCCESS, payload: res.data.user.rentItems})
+    })
+    .catch(err => {
+      dispatch({type: types.GET_MY_EQUIP_ITEM_FAIL, payload: err})
     })
 };
 
 
-
-
-
-
-export const getEquipmentItem = (id) => async dispatch =>{
-  dispatch({ type: types.GET_EQUIP_START});
-
-  try {
-    const res = await umtsApiWithAuth.get(`/rentItems/${id}`);
-
-    dispatch({type: types.GET_EQUIP_SUCCESS, payload: res.data});
-
-  } catch (error) {
-    dispatch({type: types.GET_EQUIP_FAIL, payload: error});
-  }
-};
-
-
-
-
-
-
-
-
-export const postEquipment = equipment => async dispatch =>{
+export const postEquipment = equipment => dispatch =>{
   dispatch({ type: types.POST_EQUIP_LIST_START});
-
-  try {
-    const res = await umtsApiWithAuth.post('/rentItems', equipment);
-
-    dispatch({type: types.POST_EQUIP_LIST_SUCCESS, payload: res.data});
-
-  } catch (error) {
-    dispatch({type: types.POST_EQUIP_LIST_FAIL, payload: error.res.data});
-  }
+  return umtsApiWithAuth()
+  .post('/rentItems', equipment)
+  .then(res => {
+    console.log(res.data)
+    dispatch({type: types.POST_EQUIP_LIST_SUCCESS, payload: res.data.item})
+  })
+  .catch(err => {
+    dispatch({type: types.POST_EQUIP_LIST_FAIL, payload: err})
+  })
+  
 };
 
 
 
 
-
-
-
-
-
-export const editEquipment = equipment => async dispatch =>{
+export const editItem = equipment => dispatch =>{
   dispatch({ type: types.PUT_EQUIP_ITEM_START});
-
-  try {
-    const res = await umtsApiWithAuth.put(`/rentItems/${equipment.id}`, equipment);
-
-    dispatch({type: types.PUT_EQUIP_ITEM_SUCCESS, payload: res.data});
-
-  } catch (error) {
-    dispatch({type: types.PUT_EQUIP_ITEM_FAIL, payload: error});
-  }
+  return umtsApiWithAuth()
+  .put(`/rentItems/${equipment.itemId}`, equipment)
+  .then(res => {
+    console.log(res.data)
+    dispatch({type: types.PUT_EQUIP_ITEM_SUCCESS, payload: res.data})
+  })
+  .catch(err => {
+    dispatch({type: types.PUT_EQUIP_ITEM_FAIL, payload: err})
+  })
+  
 };
 
 
 
-
-
-
-
-export const deleteEquipment = id => async dispatch => {
+export const deleteItem = id => dispatch => {
 	dispatch({ type: types.DELETE_EQUIP_START });
-	try {
-    const res = await umtsApiWithAuth.delete(`/rentItems/${id}`);
-    
-		dispatch({ type: types.DELETE_EQUIP_SUCCESS, payload: res.id
-   });
-	} catch (error) {
-		dispatch({ type: types.DELETE_EQUIP_FAIL, payload: error.res.data });
-	}
+  return umtsApiWithAuth()
+  .delete(`/rentItems/${id}`)
+  .then(res => {
+    console.log(res.data)
+    dispatch({type: types.DELETE_EQUIP_SUCCESS, payload: id})
+  })
+  .catch(err => {
+    dispatch({type: types.DELETE_EQUIP_FAIL, payload: err})
+  })
+
 };

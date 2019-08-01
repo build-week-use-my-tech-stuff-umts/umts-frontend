@@ -18,22 +18,16 @@ console.log(props.rentItems)
       <h1>Check out the RenTech Marketplace!</h1>
       <div className="item-list">
         
-        
-      
-
       {props.rentItems && props.rentItems.map(rentItem => (
         <ItemCard key={rentItem.id } rentItem={rentItem}/>
       ) )}
         
-        
-
       </div>
     </div>
   );
 };
 const mapStateToProps = (state) => ({
 rentItems: state.equipmentReducer.rentItems,
-
 
 })
 

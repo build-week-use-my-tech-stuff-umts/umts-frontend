@@ -7,9 +7,7 @@ const ItemCard = props => {
     <div className="item-card">
       <Card>
         <Image
-          src={require("../../img/camera-macro-optics-122400.jpg")}
-          // src={props.rentItem.category.image}
-          //  uncomment this after BE fix 
+          src={props.rentItem.category.imageUrl} 
           wrapped
           ui={false}
         />
@@ -23,10 +21,10 @@ const ItemCard = props => {
         <Card.Header>${props.rentItem.price} per day</Card.Header>
         </Card.Content>
             <Card.Content extra>
-        <Icon name='camera' />
+       
         
-        {/* {props.rentItem.category.name} */}
-        {/* uncomment this after BE fix */}
+        {props.rentItem.category.name} 
+        
     </Card.Content>
         <ItemPage props={props}/>
       </Card>
@@ -35,15 +33,15 @@ const ItemCard = props => {
 };
 
 const ItemPage = props => {
-  console.log(props.props.rentItem);
+  // console.log(props.props.rentItem);
   return (
     <div className="item-page">
       <Modal trigger={<Button color='blue'>View Details</Button>}>
         <Modal.Header>{props.props.rentItem.name}</Modal.Header>
         <Modal.Content image>
-          <Image wrapped size="medium" src={require("../../img/camera-macro-optics-122400.jpg")} />
-          {/* src={props.props.rentItem.category.image}
-          uncomment this after BE fix */}
+          <Image wrapped size="medium" src={props.props.rentItem.category.imageUrl} />
+          
+         
           <Modal.Description>
             <Header>${props.props.rentItem.price} per day</Header>
             <p>{props.props.rentItem.description}</p>

@@ -1,21 +1,30 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { connect } from 'react-redux'
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
-// import axios from "axios";
+
+import { postEquipment } from '../../store/actions/equipmentActions'
+
+
 
 function NewItmFrm({ values, errors, touched, isSubmitting }) {
   return (
     <div className='form-card'>
     <Form className='ui form'>
+    <div className='field'>
+        <label htmlFor='name'>Name
+        {touched.name && errors.name && <p>{errors.name}</p>}
+        <Field type="text" name="name" placeholder="Name of Item" />
+        </label>
+      </div>
       <div className='field'>
-    <label htmlFor='itemType'> Type of Item:
-      <Field component="select" name="itemType">
-          <option value="Camera">Camera</option>
-          <option value="TV">TV</option>
-          <option value="Audio">Audio</option>
-          <option value="Computers">Computer</option>
-          <option value="Others">Other</option>
+    <label htmlFor='catId'> Type of Item:
+      <Field component="select" name="catId">
+          <option value="1">Camera</option>
+          <option value="2">TV</option>
+          <option value="3">Audio</option>
+          <option value="4">Computer</option>
+          <option value="5">Other</option>
         </Field>
     </label>
     </div>
@@ -55,7 +64,8 @@ function NewItmFrm({ values, errors, touched, isSubmitting }) {
 
 const NewItemForm = withFormik({
   mapPropsToValues({
-    itemType,
+    name,
+    catId,
     description,
     price,
     imageUrl,
@@ -63,39 +73,31 @@ const NewItemForm = withFormik({
     
   }) {
     return {
-      itemType: itemType || "Camera",
+      name: name || "",
+      catId: catId || "5",
       description: description || "",
       price: price || "",
-     imageUrl: imageUrl || "",
+     imageUrl: imageUrl || "http://dummyimage.com/1042x1375.jpg/dddddd/000000",
       address: address || ""
     };
   },
   validationSchema: Yup.object().shape({
-    itemType: Yup.string().required("Type is required"),
-    description: Yup.string().required("is required"),
-    price: Yup.string()
-      .required("is required"),
-    imageUrl: Yup.string()
-    .url('Must be a valid URL')
-     .required("is required"),
+    name: Yup.string().required("Name is required"),
+    catId: Yup.string().required("Type is required"),
+    description: Yup.string().required("Description is required"),
+    price: Yup.string().required("Price is required"),
+    imageUrl: Yup.string().url('Must be a valid URL').required("Image URL is required"),
   }),
 
-  handleSubmit(values, { resetForm, setErrors, setSubmitting }) {
-      //   axios
-      //     .post("https://yourdatabaseurlgoeshere.com", values)
-      //     .then(res => {
-      //       console.log(res); // Data was created successfully and logs to console
-      //       resetForm();
-      //       setSubmitting(false);
-      //     })
-      //     .catch(err => {
-      //       console.log(err); // There was an error creating the data and logs to console
-      //       setSubmitting(false);
-      //     });
-      console.log(
-        values
-      );
+  handleSubmit(values, formikBag) {
+    
+    formikBag.props.postEquipment(values)
+      .then(() => {window.location.reload() });
+      console.log(values);
     }
   }
 )(NewItmFrm);
-export default NewItemForm;
+
+
+
+export default connect(null, {postEquipment} )(NewItemForm);

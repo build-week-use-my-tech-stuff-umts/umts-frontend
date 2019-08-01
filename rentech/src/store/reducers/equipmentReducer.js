@@ -34,25 +34,29 @@ export default (state = initialState, action) => {
 
 
 
-    case types.GET_EQUIP_ITEM_START:
+    case types.GET_MY_EQUIP_ITEM_START:
       return {
         ...state,
         isLoading: true,
         errors: null
       };
-    case types.GET_EQUIP_ITEM_SUCCESS:
+    case types.GET_MY_EQUIP_ITEM_SUCCESS:
       return {
         ...state,
         isLoading: false,
         errors: null,
-        rentItems: payload
+        rentItems: action.payload
+        
       };
-    case types.GET_EQUIP_ITEM_FAIL:
+    case types.GET_MY_EQUIP_ITEM_FAIL:
       return {
         ...state,
         isLoading: false,
-        errors: payload
+        errors: payload.error
       };
+
+
+
 
     case types.POST_EQUIP_LIST_START:
       return {
@@ -77,6 +81,9 @@ export default (state = initialState, action) => {
         isSuccess: false
       };
 
+
+
+
     case types.PUT_EQUIP_ITEM_START:
       return {
         ...state,
@@ -99,12 +106,16 @@ export default (state = initialState, action) => {
         isSuccess: false
       };
 
+
+
+
     case types.DELETE_EQUIP_START:
       return {
         ...state,
         isLoading: true,
         errors: null
       };
+
     case types.DELETE_EQUIP_SUCCESS:
       const updatedEquipment = state.equipment.filter(
         item => item.id !== payload
@@ -115,6 +126,7 @@ export default (state = initialState, action) => {
         errors: null,
         equipment: updatedEquipment
       };
+
     case types.DELETE_EQUIP_FAIL:
       return {
         ...state,
