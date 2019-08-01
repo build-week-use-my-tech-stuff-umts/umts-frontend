@@ -3,7 +3,7 @@ import "./scss/App.scss";
 
 //Components
 import Header from "./components/render/Header.js";
-
+import Footer from './components/render/Footer.js'
 //Styles
 import "semantic-ui-css/semantic.min.css";
 import NavBar from "./components/render/NavBar";
@@ -14,8 +14,10 @@ function App() {
     <div className="App">
       <Header />
       <NavBar />
-      <AppRouter />
-
+      <div className='router-container' >
+        <AppRouter />
+      </div>
+      <Footer />
     </div>
   );
 }

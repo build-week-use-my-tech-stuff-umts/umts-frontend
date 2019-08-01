@@ -3,11 +3,13 @@ import { connect } from 'react-redux'
 import { doSignIn } from '../../store/actions/authActions'
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
+import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 
 
 
 
 function LogFrm({ errors, touched }) {
+  const token = localStorage.getItem('token');
   return (
     <div className="form-card">
     <h1>Login</h1>
@@ -28,10 +30,14 @@ function LogFrm({ errors, touched }) {
             <Field type="password" name="password" placeholder="Password" />
           </label>
         </div>
-
-        <button className="ui button" type="submit">
+        <button className="ui button" type="submit" onClick={() => {
+        if(token) {
+        document.querySelector('.logout').classList.add('show-link')
+        }
+        }}>
           Login
         </button>
+        <NavLink to="/createaccount"><button className='ui button' >Create Account</button></NavLink>
 
       </Form>
     </div>

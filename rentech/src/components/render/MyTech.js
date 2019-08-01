@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import { Card, Image, Icon, Button } from "semantic-ui-react";
 import AddItem from "./AddItem.js";
 import EditItem from "./EditItem.js";
+
 import { getMyEquipmentItem, deleteItem } from '../../store/actions/equipmentActions'
 
 
@@ -14,7 +15,6 @@ const MyTechList = props => {
   },[]);
 
   console.log(props.rentItems);
- 
 
   return (
     <div>
@@ -63,6 +63,7 @@ function MyTechItems(props) {
 
         <div className="button-box">
 
+
           <EditItem rentItem={props.rentItem}/>
 
           <Button 
@@ -74,6 +75,7 @@ function MyTechItems(props) {
             Delete
           </Button>
           
+
         </div>
       </Card>
     </div>

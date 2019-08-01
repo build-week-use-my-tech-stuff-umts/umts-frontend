@@ -1,72 +1,15 @@
-import React from "react";
-import { Tab, Menu, Icon } from "semantic-ui-react";
-import { NavLink } from "react-router-dom";
 
-const Nav = props => <NavLink exact {...props} activeClassName="active" />;
 
-const createLabel = (iconName, labelText) => (
-  <span>
-    <Icon name={iconName} />
-    {labelText}
-  </span>
-);
-
-const accountLabel = createLabel("users", "Account Settings");
-const myTechLabel = createLabel("computer", "My Tech");
-const exploreTechLabel = createLabel("shop", "Explore Tech for Rent");
-
-const panes = [
-  {
-    menuItem: (
-      <Menu.Item key="users" as={Nav} to={`/account`} content={accountLabel} />
-    )
-  },
-  {
-    menuItem: (
-      <Menu.Item key="computer" as={Nav} to={`/mytech`} content={myTechLabel} />
-    )
-  },
-  {
-    menuItem: (
-      <Menu.Item
-        key="shop"
-        as={Nav}
-        to={`/marketplace`}
-        content={exploreTechLabel}
-      />
-    )
-  }
-];
-
-const NavBar = () => (
-  <div className="nav-container">
-    <Tab menu={{ secondary: true, pointing: true }} panes={panes} />
-  </div>
-);
-
-export default NavBar;
-
-// would like to implament below nav bar.
-
-/*  
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { Menu } from 'semantic-ui-react'
+import { NavLink } from "react-router-dom";
+
+
+const Nav = props => <NavLink exact {...props} activeClassName="active" />;
 
 const colors = [
-  'red',
-  'orange',
-  'yellow',
-  'olive',
-  'green',
-  'teal',
-  'blue',
-  'violet',
-  'purple',
-  'pink',
-  'brown',
-  'grey',
-  'black',
+  'black'
 ]
 
 class ExampleMenu extends Component {
@@ -74,7 +17,7 @@ class ExampleMenu extends Component {
     color: PropTypes.string,
   }
 
-  state = { activeItem: 'home' }
+  state = { activeItem: 'Account Settings' }
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
@@ -84,16 +27,19 @@ class ExampleMenu extends Component {
 
     return (
       <Menu color={color} inverted widths={3}>
-        <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick} />
+        <Menu.Item name='Account Settings' active={activeItem === 'Account Settings'} onClick={this.handleItemClick} as={Nav} to={`/account`} />
         <Menu.Item
-          name='messages'
-          active={activeItem === 'messages'}
+          name='MyTech'
+          active={activeItem === 'MyTech'}
           onClick={this.handleItemClick}
+          as={Nav} to={`/mytech`}
         />
         <Menu.Item
-          name='friends'
-          active={activeItem === 'friends'}
+          name='Explore Marketplace'
+          active={activeItem === 'Explore Marketplace'}
           onClick={this.handleItemClick}
+          as={Nav}
+          to={`/marketplace`}
         />
       </Menu>
     )
@@ -107,4 +53,3 @@ const MenuExampleColoredInvertedMenus = () => {
 }
 
 export default MenuExampleColoredInvertedMenus
-*/

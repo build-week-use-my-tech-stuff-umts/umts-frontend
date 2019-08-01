@@ -6,7 +6,7 @@ import EditItemForm from "../forms/EditItemForm.js";
 const EditItem = (props) => {
   return (
     <div className="edit-account">
-      <Modal trigger={<Button color="blue" className='techbutton'size='small' >Edit Item</Button>}>
+      <Modal trigger={<Button color="blue" size='small' >Edit Item</Button>}>
         <Modal.Header>Edit Item</Modal.Header>
         <Modal.Content>
           <EditItemForm rentItem={props.rentItem}/>
