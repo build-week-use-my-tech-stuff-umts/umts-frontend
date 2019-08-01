@@ -19,7 +19,6 @@ const EditItem = props => {
         <Modal.Header>Edit Item</Modal.Header>
         <Modal.Content>
           <EditItemForm rentItem={props.rentItem} />
-          <Button>Test close button</Button>
         </Modal.Content>
       </Modal>
     </div>
