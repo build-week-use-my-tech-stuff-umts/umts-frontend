@@ -1,35 +1,29 @@
-
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import { Button, Modal } from "semantic-ui-react";
 
 import EditItemForm from "../forms/EditItemForm.js";
 //This Modal Component
 
-
-const EditItem = (props) => {
-    const [isOpen, setIsOpen] = useState(false); //Pass as props to Editbutton
-    const [item, setItem] = useState(props.rentItem)
-
-
-
-    return (
-        <div className="edit-account">
-            <Modal
-                closeIcon
-                open={isOpen}
-                trigger={<Button
-                    onClick={() => setIsOpen(true)}
-                    color="blue"
-                    size='small' >Edit Item</Button>}>
-                <Modal.Header>Edit Item</Modal.Header>
-                <Modal.Content>
-                    <EditItemForm rentItem={props.rentItem} setClose={setIsOpen} />
-                    <Button onClick={() => setIsOpen(false)}>Test close button</Button>
-                </Modal.Content>
-            </Modal>
-        </div>
-    );
+const EditItem = props => {
+  return (
+    <div className="edit-account">
+      <Modal
+        closeIcon
+        trigger={
+          <Button color="blue" size="small">
+            Edit Item
+          </Button>
+        }
+      >
+        <Modal.Header>Edit Item</Modal.Header>
+        <Modal.Content>
+          <EditItemForm rentItem={props.rentItem} />
+          <Button>Test close button</Button>
+        </Modal.Content>
+      </Modal>
+    </div>
+  );
 };
 
 export default EditItem;

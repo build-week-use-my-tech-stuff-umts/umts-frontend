@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, Image, Modal, Header, Button, Form } from "semantic-ui-react";
+import { Card, Image, Modal, Header, Button } from "semantic-ui-react";
 
 const ItemCard = props => {
   // console.log(props.rentItem);
@@ -9,7 +9,9 @@ const ItemCard = props => {
         <Image src={props.rentItem.category.imageUrl} wrapped ui={false} />
         <Card.Content>
           <Card.Header>{props.rentItem.name}</Card.Header>
-          <Card.Description>{props.rentItem.description}</Card.Description>
+          <Card.Description className="description-container">
+            {props.rentItem.description}
+          </Card.Description>
         </Card.Content>
         <Card.Content extra>
           <Card.Header>${props.rentItem.price} per day</Card.Header>
