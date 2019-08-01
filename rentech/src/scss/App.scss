@@ -225,3 +225,14 @@ nav a {
 // .show-link {
 //           display: block;
 //       }
+
+.center {
+  display: flex;
+  justify-content: center;
+
+  .logo {
+    height: auto;
+    width: 230px;
+    margin: 0.4rem;
+  }
+}

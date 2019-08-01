@@ -19,8 +19,10 @@ const MyTechList = props => {
 
   return (
     <div>
-      <h2 className="myTech-header">My Tech Items</h2>
-      <AddItem props={props} />
+      <div className="flex-row">
+        <h2 className="myTech-header">My Tech Items</h2>
+        <AddItem props={props} />
+      </div>
       <div className="tech-container">
         <div className="myTech-list">
           {!props.rentItems.length && <p>No Items to display yet!</p>}
