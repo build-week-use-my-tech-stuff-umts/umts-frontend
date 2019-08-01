@@ -7,10 +7,10 @@ const ConfirmDelete = (props) => {
   return (
     <div className="edit-account">
       <Modal size='mini' trigger={<Button color="red" size='small' >Delete</Button>}>
-        <Modal.Header>U Sure Bro?</Modal.Header>
+        <Modal.Header>Would you like to delete your item?</Modal.Header>
         <Modal.Content>
-          <Button onClick = {() => {props.deleteItem(props.rentItem.id).then(() => {window.location.reload() })}}  type='submit' positive>Fuck Yeah</Button>
-          <Button type='close' negative>Hell Nah</Button>
+          <Button onClick = {() => {props.deleteItem(props.rentItem.id).then(() => {window.location.reload() })}}  type='submit' positive>Yes</Button>
+          <Button type='close' negative>No</Button>
         </Modal.Content>
       </Modal>
     </div>
