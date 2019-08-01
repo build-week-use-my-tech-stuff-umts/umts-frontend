@@ -1,10 +1,12 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { connect } from 'react-redux'
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
-// import axios from "axios";
+import { editUser} from '../../store/actions/authActions'
 
-function EditProFrm({ values, errors, touched, isSubmitting }) {
+
+function EditProFrm({ values, errors, touched, isSubmitting, user }) {
+  // console.log(user);
   return (
     <div className="form-card">
       <Form className="ui form">
@@ -17,11 +19,11 @@ function EditProFrm({ values, errors, touched, isSubmitting }) {
           </label>
         </div>
         <div className="field">
-          <label htmlFor="address">
+          <label value="{ }" htmlFor="street">
             {" "}
-            Address
-            {touched.address && errors.address && <p>{errors.address}</p>}
-            <Field type="text" name="address" placeholder="Address" />
+            street
+            {touched.street && errors.street && <p>{errors.street}</p>}
+            <Field type="text" name="street" placeholder="street" />
           </label>
         </div>
         <div className="field">
@@ -88,14 +90,8 @@ function EditProFrm({ values, errors, touched, isSubmitting }) {
             </Field>
           </label>
         </div>
-        <div className="field">
-          <label htmlFor="zip">
-            Zip
-            {touched.zip && errors.zip && <p>{errors.zip}</p>}
-            <Field type="text" name="zip" placeholder="Zip" />
-          </label>
-        </div>
-        {/* disabled={isSubmitting}  ***Removed from submit button for testing***/}
+        
+        {/* disabled={isSubmitting}  ***Removed from submit button for testing** */}
         <button className="ui button" type="submit">
           Update Profile
         </button>
@@ -109,19 +105,22 @@ function EditProFrm({ values, errors, touched, isSubmitting }) {
 
 const EditProfileForm = withFormik({
   mapPropsToValues({
+    user,
     phone,
-    address,
+    street,
     city,
     state,
-    zip
+
   
   }) {
+    // console.log(user.user.phone);
+
     return {
-      phone: phone || "",
-      address: address || "",
-      city: city || "",
-      state: state || "Alaska",
-      zip: zip || ""
+      phone: phone || user.user.phone,
+      street: street || user.user.street,
+      city: city || user.user.city,
+      state: state || user.user.state,
+      
     };
   },
   validationSchema: Yup.object().shape({
@@ -130,21 +129,25 @@ const EditProfileForm = withFormik({
       .max(5, "Zipcode cannot be longer than 5 numbers")
   }),
 
-  handleSubmit(values, { resetForm, setErrors, setSubmitting }) {
-    
-      //   axios
-      //     .post("https://yourdatabaseurlgoeshere.com", values)
-      //     .then(res => {
-      //       console.log(res); // Data was created successfully and logs to console
-      //       resetForm();
-      //       setSubmitting(false);
-      //     })
-      //     .catch(err => {
-      //       console.log(err); // There was an error creating the data and logs to console
-      //       setSubmitting(false);
-      //     });
-      console.log(values);
+  handleSubmit(values, formikBag) {
+    const {firstName, lastName, email} = formikBag.props.user.user;
+    const userData={
+      ...values,
+      firstName,
+      lastName,
+      email
     }
-  }
+
+    // console.log(userData);
+    formikBag.props.editUser(userData)
+    .then(() => {window.location.reload() });
+    
+    }
+    }
+  
 )(EditProFrm);
-export default EditProfileForm;
+
+
+
+
+export default  connect(null, {editUser})(EditProfileForm);

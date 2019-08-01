@@ -1,24 +1,29 @@
 import React from "react";
 import "./scss/App.scss";
-
+import { Route, Switch } from "react-router-dom";
+import LoginCard from "./components/render/LoginCard";
 //Components
 import Header from "./components/render/Header.js";
-import Footer from './components/render/Footer.js'
+import Footer from "./components/render/Footer.js";
 //Styles
 import "semantic-ui-css/semantic.min.css";
 import NavBar from "./components/render/NavBar";
 import AppRouter from "./components/render/AppRouter";
-
+import CreateAcctCard from './components/render/CreateAcctCard'
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <NavBar />
-      <div className='router-container' >
-        <AppRouter />
+    <Switch>
+    <Route path="/login" render={props => <LoginCard {...props} />} />
+    <Route path='/createaccount' render={props => <CreateAcctCard {...props} /> } />
+      <div className="App">
+        <Header />
+        <NavBar />
+        <div className="router-container">
+          <AppRouter />
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </Switch>
   );
 }
 

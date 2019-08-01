@@ -1,8 +1,9 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { connect } from 'react-redux'
+import { editPass} from '../../store/actions/authActions';
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
-// import axios from "axios";
+
 
 function NewPass({ values, errors, touched, isSubmitting }) {
   return (
@@ -78,12 +79,8 @@ const UpdatePassword = withFormik({
       .max(5, "Zipcode cannot be longer than 5 numbers")
   }),
 
-  handleSubmit(values, { resetForm, setErrors, setSubmitting }) {
-    if (values.email === "alreadytaken@atb.dev") {
-      setErrors({ email: "That email is already taken" });
-    } else if (values.tos === false) {
-      setErrors({ tos: "Please Accept the Terms of Service" });
-    } else {
+  handleSubmit(values, formik) {
+    
       //   axios
       //     .post("https://yourdatabaseurlgoeshere.com", values)
       //     .then(res => {
@@ -97,6 +94,9 @@ const UpdatePassword = withFormik({
       //     });
       console.log(values);
     }
-  }
+  
 })(NewPass);
-export default UpdatePassword
+
+
+
+export default  connect(null, {editPass})(UpdatePassword);

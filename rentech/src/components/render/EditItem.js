@@ -1,5 +1,8 @@
+
 import React, { useState, useEffect } from "react";
-import { Header, Button, Modal, Image } from "semantic-ui-react";
+
+import { Button, Modal } from "semantic-ui-react";
+
 import EditItemForm from "../forms/EditItemForm.js";
 //This Modal Component
 

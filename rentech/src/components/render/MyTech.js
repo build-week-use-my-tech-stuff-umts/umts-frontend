@@ -1,7 +1,7 @@
 import React, { useEffect }from "react";
 import {connect} from 'react-redux'
 
-import { Card, Image, Icon, Button } from "semantic-ui-react";
+import { Card, Image, Button } from "semantic-ui-react";
 import AddItem from "./AddItem.js";
 import EditItem from "./EditItem.js";
 import ConfirmDelete from './ConfirmDelete'
@@ -14,7 +14,7 @@ console.log('myTech',props)
     props.getMyEquipmentItem()
   },[]);
 
-  console.log(props.rentItems);
+  // console.log(props.rentItems);
 
   return (
     <div>

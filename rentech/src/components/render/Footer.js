@@ -1,6 +1,6 @@
 import React from "react";
-import Logo from "../../img/rentech-logo-new.png";
-import { NavLink } from "react-router-dom";
+// import Logo from "../../img/rentech-logo-new.png";
+// import { NavLink } from "react-router-dom";
 import { Icon } from "semantic-ui-react"
 
 const Footer = () => {

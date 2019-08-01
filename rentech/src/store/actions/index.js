@@ -13,7 +13,12 @@ export const types= {
   
 	LOGOUT_START        : 'LOGOUT_START',
 	LOGOUT_SUCCESS      : 'LOGOUT_SUCCESS',
-  LOGOUT_FAIL         : 'LOGOUT_FAIL',
+	LOGOUT_FAIL         : 'LOGOUT_FAIL',
+	
+	GET_USER_START        : 'GET_USER_START',
+	GET_USER_SUCCESS      : 'GET_USER_SUCCESS',
+	GET_USER_FAIL         : 'GET_USER_FAIL',
+
 
   WELCOME_BACK        : 'WELCOME_BACK',
   //AUTH ACTIONS//

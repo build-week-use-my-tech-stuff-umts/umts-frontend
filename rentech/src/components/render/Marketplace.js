@@ -11,7 +11,6 @@ useEffect(() => {
   props.getEquipmentList()
 },[]);
 
-console.log(props.rentItems)
 
   return (
     <div className="items">
