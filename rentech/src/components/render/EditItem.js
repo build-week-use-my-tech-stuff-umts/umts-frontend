@@ -11,14 +11,7 @@ const EditItem = (props) => {
     const [item, setItem] = useState(props.rentItem)
 
 
-    useEffect(() => {
-            if (props.rentItem !== props.values) {
-                setIsOpen(false)
-            } else {
-                setIsOpen(true)
-            }
-        }
-    ,[props])
+
     return (
         <div className="edit-account">
             <Modal
