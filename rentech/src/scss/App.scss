@@ -225,14 +225,26 @@ nav a {
 // .show-link {
 //           display: block;
 //       }
+.login-card {
+  position: absolute;
+  margin: auto;
+  top: 100px;
+  right: 0;
+  bottom: 0;
+  left: 30%;
+  width: 600px !important;
+  height: 400px;
 
-.center {
-  display: flex;
-  justify-content: center;
+  box-shadow: 5px 1px 20px #999 !important;
 
-  .logo {
-    height: auto;
-    width: 230px;
-    margin: 0.4rem;
+  .center {
+    display: flex;
+    justify-content: center;
+
+    .logo {
+      height: auto;
+      width: 230px;
+      margin: 1.5rem;
+    }
   }
 }
