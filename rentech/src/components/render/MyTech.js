@@ -5,12 +5,13 @@ import { Card, Image, Button } from "semantic-ui-react";
 import AddItem from "./AddItem.js";
 import EditItem from "./EditItem.js";
 
-import {
-  getMyEquipmentItem,
-  deleteItem
-} from "../../store/actions/equipmentActions";
+import ConfirmDelete from './ConfirmDelete'
+import { getMyEquipmentItem, deleteItem } from '../../store/actions/equipmentActions'
+
 
 const MyTechList = props => {
+console.log('myTech',props)
+
   useEffect(() => {
     props.getMyEquipmentItem();
   }, []);
@@ -25,16 +26,17 @@ const MyTechList = props => {
       </div>
       <div className="tech-container">
         <div className="myTech-list">
-          {!props.rentItems.length && <p>No Items to display yet!</p>}
 
-          {props.rentItems &&
-            props.rentItems.map(rentItem => (
-              <MyTechItems
-                key={rentItem.id}
-                rentItem={rentItem}
-                deleteItem={props.deleteItem}
-              />
-            ))}
+
+
+      {!props.rentItems.length && <p>No Items to display yet!</p>}
+
+        {props.rentItems && props.rentItems.map(rentItem => (
+         <div>
+          <MyTechItems key={rentItem.id } rentItem={rentItem} deleteItem={props.deleteItem}/>
+          </div>
+        ) )}
+
         </div>
       </div>
     </div>
@@ -59,29 +61,26 @@ function MyTechItems(props) {
         <Card.Content extra>{props.rentItem.category.name}</Card.Content>
 
         <div className="button-box">
-          <EditItem rentItem={props.rentItem} />
 
-          <Button
-            onClick={() => {
-              props.deleteItem(props.rentItem.id).then(() => {
-                window.location.reload();
-              });
-            }}
-            color="red"
-            size="small"
-            className="techbutton"
-          >
-            Delete
-          </Button>
+
+          <EditItem rentItem={props.rentItem}/>
+          <ConfirmDelete rentItem={props.rentItem} deleteItem={props.deleteItem}/>
+
+{console.log('mytectpage',props)}
+
+
         </div>
       </Card>
     </div>
   );
 }
 
-const mapStateToProps = state => ({
-  rentItems: state.equipmentReducer.rentItems
-});
+
+const mapStateToProps = (state) => ({
+  rentItems: state.equipmentReducer.rentItems,
+
+  })
+
 
 export default connect(
   mapStateToProps,

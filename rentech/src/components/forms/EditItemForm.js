@@ -1,15 +1,17 @@
 import React from "react";
 import { connect } from 'react-redux'
 import { editItem } from '../../store/actions/equipmentActions'
+import {Button} from 'semantic-ui-react'
 
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 // import axios from "axios";
 
-function EditItmFrm({ values, errors, touched, isSubmitting, rentItem }) {
-  // console.log(rentItem)
+function EditItmFrm({ values, errors, touched, isSubmitting, rentItem}) {
+  console.log('edit', rentItem)
+
   return (
-    
+
     <Form className='ui form'>
     <div className='field'>
         <label htmlFor='name'>Name
@@ -53,9 +55,9 @@ function EditItmFrm({ values, errors, touched, isSubmitting, rentItem }) {
         {/*TODO::: Address value should populate with address in the persons profile */}
         </label>
       </div>
-      
+
       {/* disabled={isSubmitting}  ***Removed from submit button for testing***/}
-      <button className='ui button' type='submit'>Submit</button>
+      <button className='ui close button' type='submit'>Submit</button>
       <button className='ui button' type='reset'>Reset Form</button>
     </Form>
   );
@@ -70,7 +72,7 @@ const EditItemForm = withFormik({
     imageUrl,
     address,
     rentItem,
-    
+    setClose,
   }) {
     return {
       itemId: rentItem.id,
@@ -92,10 +94,11 @@ const EditItemForm = withFormik({
 
   handleSubmit(values, formikBag) {
     formikBag.props.editItem(values)
-    .then(() => {window.location.reload() });
-    console.log(values);
-      
-      
+    // console.log(formikBag);
+    .then(() => {formikBag.props.setClose(false)
+    window.location.reload()});
+
+
     }
   }
 )(EditItmFrm);

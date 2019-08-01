@@ -20,7 +20,7 @@ export const getEquipmentList = () => dispatch => {
 };
 
 export const getMyEquipmentItem = () => dispatch =>{
-  
+
   // console.log( types.GET_MY_EQUIP_ITEM_START)
   dispatch({ type: types.GET_MY_EQUIP_ITEM_START});
   return umtsApiWithAuth()
@@ -40,13 +40,13 @@ export const postEquipment = equipment => dispatch =>{
   return umtsApiWithAuth()
   .post('/rentItems', equipment)
   .then(res => {
-    console.log(res.data)
+
     dispatch({type: types.POST_EQUIP_LIST_SUCCESS, payload: res.data.item})
   })
   .catch(err => {
     dispatch({type: types.POST_EQUIP_LIST_FAIL, payload: err})
   })
-  
+
 };
 
 
@@ -57,13 +57,13 @@ export const editItem = equipment => dispatch =>{
   return umtsApiWithAuth()
   .put(`/rentItems/${equipment.itemId}`, equipment)
   .then(res => {
-    console.log(res.data)
+
     dispatch({type: types.PUT_EQUIP_ITEM_SUCCESS, payload: res.data})
   })
   .catch(err => {
     dispatch({type: types.PUT_EQUIP_ITEM_FAIL, payload: err})
   })
-  
+
 };
 
 
@@ -73,7 +73,7 @@ export const deleteItem = id => dispatch => {
   return umtsApiWithAuth()
   .delete(`/rentItems/${id}`)
   .then(res => {
-    console.log(res.data)
+
     dispatch({type: types.DELETE_EQUIP_SUCCESS, payload: id})
   })
   .catch(err => {
