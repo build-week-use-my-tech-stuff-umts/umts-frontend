@@ -3,13 +3,16 @@ import { Header, Button, Modal, Image } from "semantic-ui-react";
 import NewItemForm from "../forms/NewItemForm.js";
 //This Modal Component
 
-const AddItem = () => {
+const AddItem = (props) => {
+
+
+
   return (
     <div className="edit-account">
-      <Modal trigger={<Button size="huge" color='white'>+ Add an Item</Button>}>
+      <Modal trigger={<Button size="huge" color='blue'>+ Add an Item</Button>}>
         <Modal.Header>Add an Item</Modal.Header>
         <Modal.Content>
-          <NewItemForm />
+          <NewItemForm props={props}/>
         </Modal.Content>
       </Modal>
     </div>

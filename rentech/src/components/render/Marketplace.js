@@ -1,27 +1,34 @@
-import React from "react";
+import React, {useEffect} from "react";
+import {connect} from 'react-redux'
 import ItemCard from "./ItemCard";
-
+import  {getEquipmentList} from '../../store/actions/equipmentActions'
 //This component is rendering elements for 'Explore Tech'
-const Marketplace = () => {
-  // GET Request for item card data
+
+
+const Marketplace = props => {
+
+useEffect(() => {
+  props.getEquipmentList()
+},[]);
+
+console.log(props.rentItems)
+
   return (
     <div className="items">
       <h1>Check out the RenTech Marketplace!</h1>
       <div className="item-list">
-        {/* {data.map(info => {
-        return <ItemCard key={info.id} data={info} />;
-      })} */}
-        <ItemCard />
-        <ItemCard />
-        <ItemCard />
-        <ItemCard />
-        <ItemCard />
-        <ItemCard />
-        <ItemCard />
-        <ItemCard />
+        
+      {props.rentItems && props.rentItems.map(rentItem => (
+        <ItemCard key={rentItem.id } rentItem={rentItem}/>
+      ) )}
+        
       </div>
     </div>
   );
 };
+const mapStateToProps = (state) => ({
+rentItems: state.equipmentReducer.rentItems,
 
-export default Marketplace;
+})
+
+export default connect(mapStateToProps, {getEquipmentList})(Marketplace);

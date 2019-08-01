@@ -1,16 +1,7 @@
 import { types } from "../actions";
 
 const initialState = {
-  equipment: 
-    {
-      catId: null,
-      description: "",
-      price: "",
-      address: "",
-      imageUrl: "",
-      name: "",
-    },
-  
+  rentItems: [],
   isLoading: false,
   errors: null,
   isSuccess: true
@@ -19,6 +10,7 @@ const initialState = {
 export default (state = initialState, action) => {
   const { type, payload } = action;
   switch (type) {
+
     case types.GET_EQUIP_LIST_START:
       return {
         ...state,
@@ -30,34 +22,41 @@ export default (state = initialState, action) => {
         ...state,
         isLoading: false,
         errors: null,
-        equipment: payload
+        rentItems: action.payload
       };
     case types.GET_EQUIP_LIST_FAIL:
       return {
         ...state,
         isLoading: false,
-        errors: payload
+        errors: payload.err
       };
 
-    case types.GET_EQUIP_ITEM_START:
+
+
+
+    case types.GET_MY_EQUIP_ITEM_START:
       return {
         ...state,
         isLoading: true,
         errors: null
       };
-    case types.GET_EQUIP_ITEM_SUCCESS:
+    case types.GET_MY_EQUIP_ITEM_SUCCESS:
       return {
         ...state,
         isLoading: false,
         errors: null,
-        equipment: payload
+        rentItems: action.payload
+        
       };
-    case types.GET_EQUIP_ITEM_FAIL:
+    case types.GET_MY_EQUIP_ITEM_FAIL:
       return {
         ...state,
         isLoading: false,
-        errors: payload
+        errors: payload.error
       };
+
+
+
 
     case types.POST_EQUIP_LIST_START:
       return {
@@ -71,7 +70,7 @@ export default (state = initialState, action) => {
         ...state,
         isLoading: false,
         errors: null,
-        equipment: updatedPOSTEquipmentList,
+        rentItems: updatedPOSTEquipmentList,
         isSuccess: true
       };
     case types.POST_EQUIP_LIST_FAIL:
@@ -81,6 +80,9 @@ export default (state = initialState, action) => {
         errors: payload,
         isSuccess: false
       };
+
+
+
 
     case types.PUT_EQUIP_ITEM_START:
       return {
@@ -104,12 +106,16 @@ export default (state = initialState, action) => {
         isSuccess: false
       };
 
+
+
+
     case types.DELETE_EQUIP_START:
       return {
         ...state,
         isLoading: true,
         errors: null
       };
+
     case types.DELETE_EQUIP_SUCCESS:
       const updatedEquipment = state.equipment.filter(
         item => item.id !== payload
@@ -120,6 +126,7 @@ export default (state = initialState, action) => {
         errors: null,
         equipment: updatedEquipment
       };
+
     case types.DELETE_EQUIP_FAIL:
       return {
         ...state,

@@ -2,7 +2,8 @@ import { types } from "../actions";
 import jwt_decode from "jwt-decode";
 
 const initialState = {
-  user: {},
+  token: '',
+  user: null,
   isAuth: false,
   isLoading: false,
   errors: null,
@@ -19,7 +20,6 @@ export default (state = initialState, action) => {
         isLoading: true,
         errors: null,
         isAuth: false,
-        user: {},
         isSuccess: false
       };
     case types.LOGIN_SUCCESS:
@@ -27,18 +27,15 @@ export default (state = initialState, action) => {
         ...state,
         isLoading: false,
         isAuth: true,
-        errors: null,
-        user: payload.token,
-        isSuccess: false
+        token: payload.token,
+        user: payload.user,
+        isSuccess: true
       };
     case types.LOGIN_FAIL:
       return {
         ...state,
+        errors: payload.errors,
         isLoading: false,
-        isAuth: false,
-        errors: payload.message,
-        user: {},
-        isSuccess: false
       };
 
 

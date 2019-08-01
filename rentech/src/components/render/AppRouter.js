@@ -16,6 +16,7 @@ const AppRouter = () => {
         <PrivateRoute path="/account" component={AccountInfo} />
 
         <Route path='/' exact render={props => <LoginCard {...props}/> } />
+
         <Route path='/createaccount' render={props => <CreateAcctCard {...props} /> } />
         <Route path='/login' render={props => <LoginCard {...props}/> } />
 
