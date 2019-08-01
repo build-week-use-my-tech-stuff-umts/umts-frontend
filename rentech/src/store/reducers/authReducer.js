@@ -34,7 +34,31 @@ export default (state = initialState, action) => {
     case types.LOGIN_FAIL:
       return {
         ...state,
-        errors: payload.errors,
+        errors: payload,
+        isLoading: false,
+      };
+
+
+
+      case types.GET_USER_START:
+      return {
+        ...state,
+        isLoading: true,
+        errors: null,
+        isAuth: true,
+        isSuccess: false
+      };
+    case types.GET_USER_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        user: payload,
+        isSuccess: true
+      };
+    case types.GET_USER_FAIL:
+      return {
+        ...state,
+        errors: payload,
         isLoading: false,
       };
 
