@@ -7,8 +7,8 @@ import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 // import axios from "axios";
 
-function EditItmFrm({ values, errors, touched, isSubmitting, rentItem, setClose}) {
-  console.log('edit', rentItem, setClose)
+function EditItmFrm({ values, errors, touched, isSubmitting, rentItem}) {
+  console.log('edit', rentItem)
 
   return (
 
@@ -72,7 +72,7 @@ const EditItemForm = withFormik({
     imageUrl,
     address,
     rentItem,
-
+    setClose,
   }) {
     return {
       itemId: rentItem.id,
@@ -92,10 +92,11 @@ const EditItemForm = withFormik({
     imageUrl: Yup.string().url('Must be a valid URL').required("Image URL is required"),
   }),
 
-  handleSubmit(values, formikBag, setClose) {
+  handleSubmit(values, formikBag) {
     formikBag.props.editItem(values)
-    .then(() => {window.location.reload()});
-    console.log(values);
+    // console.log(formikBag);
+    .then(() => {formikBag.props.setClose(false)
+    window.location.reload()});
 
 
     }

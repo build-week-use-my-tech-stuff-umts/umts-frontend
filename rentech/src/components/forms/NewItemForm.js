@@ -53,7 +53,7 @@ function NewItmFrm({ values, errors, touched, isSubmitting }) {
         {/*TODO::: Address value should populate with address in the persons profile */}
         </label>
       </div>
-      
+
       {/* disabled={isSubmitting}  ***Removed from submit button for testing***/}
       <button className='ui button' type='submit'>Submit</button>
       <button className='ui button' type='reset'>Reset Form</button>
@@ -70,7 +70,7 @@ const NewItemForm = withFormik({
     price,
     imageUrl,
     address
-    
+
   }) {
     return {
       name: name || "",
@@ -90,10 +90,11 @@ const NewItemForm = withFormik({
   }),
 
   handleSubmit(values, formikBag) {
-    
+
     formikBag.props.postEquipment(values)
-      .then(() => {window.location.reload() });
-      console.log(values);
+      .then(() => {});
+      console.log('formikbag', formikBag);
+
     }
   }
 )(NewItmFrm);
