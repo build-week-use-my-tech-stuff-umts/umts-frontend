@@ -25,6 +25,26 @@ export const getUserProfile = () => dispatch => {
 
 };
 
+export const editUser = user => dispatch => {
+
+  dispatch({ type: types.GET_USER_START});
+  return umtsApiWithAuth()
+    .put('/auth/profile', user)
+    .then(
+      res => {
+        console.log(res)
+        dispatch({type: types.GET_USER_SUCCESS, payload: res.data.user});
+      }
+    )
+    .catch(
+      err => {
+        dispatch({type: types.GET_USER_FAIL, payload: err})
+        console.log(err)
+      }
+    )
+
+};
+
 
 export const doSignIn = credentials => dispatch => {
 
@@ -33,7 +53,7 @@ export const doSignIn = credentials => dispatch => {
     .post('/auth/login', credentials)
     .then(
       res => {
-        console.log(res)
+        // console.log(res)
         localStorage.setItem('token', (res.data.token));
         dispatch({type: types.LOGIN_SUCCESS, payload: res.data});
       }

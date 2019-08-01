@@ -64,6 +64,29 @@ export default (state = initialState, action) => {
 
 
 
+      case types.EDIT_USER_START:
+      return {
+        ...state,
+        isLoading: true,
+        isAuth: true,
+        isSuccess: false
+      };
+    case types.EDIT_USER_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        user: payload,
+        isSuccess: true
+      };
+    case types.EDIT_USER_FAIL:
+      return {
+        ...state,
+        errors: payload,
+        isLoading: false,
+      };
+
+
+
     case types.CREATE_USER_START:
       return {
         ...state,

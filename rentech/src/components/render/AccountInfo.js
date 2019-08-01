@@ -12,7 +12,7 @@ const AccountInfo = (props) => {
   },[]);
 
 
-console.log(props.user)
+// console.log(props.user)
 
   return (
     props.user &&  
@@ -23,11 +23,12 @@ console.log(props.user)
         <h2>Account Information</h2>
         <div className="flex-col">
           
-          <EditAccount />
-          <ChangePass />
+          <EditAccount user={props.user}/>
+          <ChangePass user={props.user}/>
         </div>
       </div>
-
+      <div>First Name: {props.user.firstName}</div>
+      <div>Last Name: {props.user.lastName}</div>
       
       <div>Email: {props.user.email}</div>
       <div>Street Address: {props.user.street}</div>
