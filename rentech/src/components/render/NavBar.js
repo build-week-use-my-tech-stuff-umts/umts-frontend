@@ -1,55 +1,57 @@
-
-
-import PropTypes from 'prop-types'
-import React, { Component } from 'react'
-import { Menu } from 'semantic-ui-react'
+import PropTypes from "prop-types";
+import React, { Component } from "react";
+import { Menu } from "semantic-ui-react";
 import { NavLink } from "react-router-dom";
-
 
 const Nav = props => <NavLink exact {...props} activeClassName="active" />;
 
-const colors = [
-  'black'
-]
+const colors = ["black"];
 
-class ExampleMenu extends Component {
+class RentechMenu extends Component {
   static propTypes = {
-    color: PropTypes.string,
-  }
+    color: PropTypes.string
+  };
 
-  state = { activeItem: 'Account Settings' }
+  state = { activeItem: "Account Settings" };
 
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+  handleItemClick = (e, { name }) => this.setState({ activeItem: name });
 
   render() {
-    const { color } = this.props
-    const { activeItem } = this.state
+    const { color } = this.props;
+    const { activeItem } = this.state;
 
     return (
       <Menu color={color} inverted widths={3}>
-        <Menu.Item name='Account Settings' active={activeItem === 'Account Settings'} onClick={this.handleItemClick} as={Nav} to={`/account`} />
         <Menu.Item
-          name='MyTech'
-          active={activeItem === 'MyTech'}
+          name="Account Settings"
+          active={activeItem === "Account Settings"}
           onClick={this.handleItemClick}
-          as={Nav} to={`/mytech`}
+          as={Nav}
+          to={`/account`}
         />
         <Menu.Item
-          name='Explore Marketplace'
-          active={activeItem === 'Explore Marketplace'}
+          name="MyTech"
+          active={activeItem === "MyTech"}
+          onClick={this.handleItemClick}
+          as={Nav}
+          to={`/mytech`}
+        />
+        <Menu.Item
+          name="Explore Marketplace"
+          active={activeItem === "Explore Marketplace"}
           onClick={this.handleItemClick}
           as={Nav}
           to={`/marketplace`}
         />
       </Menu>
-    )
+    );
   }
 }
 
 const MenuExampleColoredInvertedMenus = () => {
-  const menus = colors.map(color => <ExampleMenu color={color} key={color} />)
+  const menus = colors.map(color => <RentechMenu color={color} key={color} />);
 
-  return <div>{menus}</div>
-}
+  return <div>{menus}</div>;
+};
 
-export default MenuExampleColoredInvertedMenus
+export default MenuExampleColoredInvertedMenus;
