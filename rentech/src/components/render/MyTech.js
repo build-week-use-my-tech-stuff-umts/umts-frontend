@@ -4,12 +4,12 @@ import {connect} from 'react-redux'
 import { Card, Image, Button } from "semantic-ui-react";
 import AddItem from "./AddItem.js";
 import EditItem from "./EditItem.js";
-
+import ConfirmDelete from './ConfirmDelete'
 import { getMyEquipmentItem, deleteItem } from '../../store/actions/equipmentActions'
 
 
 const MyTechList = props => {
-
+console.log('myTech',props)
   useEffect(() => {
     props.getMyEquipmentItem()
   },[]);
@@ -27,7 +27,9 @@ const MyTechList = props => {
       {!props.rentItems.length && <p>No Items to display yet!</p>}
 
         {props.rentItems && props.rentItems.map(rentItem => (
+         <div>
           <MyTechItems key={rentItem.id } rentItem={rentItem} deleteItem={props.deleteItem}/>
+          </div>
         ) )}
 
           <AddItem props={props}/>
@@ -65,16 +67,9 @@ function MyTechItems(props) {
 
 
           <EditItem rentItem={props.rentItem}/>
+          <ConfirmDelete rentItem={props.rentItem} deleteItem={props.deleteItem}/>
 
-          <Button 
-            onClick = {() => {props.deleteItem(props.rentItem.id).then(() => {window.location.reload() })}} 
-            color="red" 
-            size="small" 
-            className="techbutton"
-          >
-            Delete
-          </Button>
-          
+{console.log('mytectpage',props)}
 
         </div>
       </Card>
@@ -84,7 +79,7 @@ function MyTechItems(props) {
 
 const mapStateToProps = (state) => ({
   rentItems: state.equipmentReducer.rentItems,
-  
+
   })
 
 export default connect(mapStateToProps,{getMyEquipmentItem, deleteItem} )(MyTechList);
