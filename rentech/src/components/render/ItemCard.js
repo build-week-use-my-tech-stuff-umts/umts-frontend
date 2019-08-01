@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, Image, Modal, Header, Button } from "semantic-ui-react";
+import { Card, Image, Modal, Header, Button, Form } from "semantic-ui-react";
 
 const ItemCard = props => {
   // console.log(props.rentItem);
@@ -50,25 +50,34 @@ const ItemPage = props => {
 class NotificationModal extends Component {
   state = { open: false };
 
-  show = size => () => this.setState({ size, open: true });
-  close = () => this.setState({ open: false });
+  // show = size => () => this.setState({ size, open: true });
+  // close = () => this.setState({ open: false });
+  handleOpen = () => {
+    this.setState({ model_open: true });
+  };
 
+  handleClose = () => {
+    this.setState({ model_open: false });
+  };
   render() {
-    const { open, size } = this.state;
+    // const { open, size } = this.state;
 
     return (
       <div className="item-page">
-        <Button onClick={this.show("mini")}>Request Item</Button>
-
-        <Modal size={size} open={open} onClose={this.close}>
-          <Modal.Header>Your request has been Sent!</Modal.Header>
+        <Modal
+          size="mini"
+          trigger={<Button onClick={this.handleOpen}>Request Item</Button>}
+          open={this.state.model_open}
+          onClose={this.handleClose}
+          closeIcon
+        >
+          <Modal.Content>
+            <p>Your request has been sent!</p>
+          </Modal.Content>
           <Modal.Actions>
-            <Button
-              positive
-              icon="checkmark"
-              labelPosition="right"
-              content="OKAY"
-            />
+            <Button positive onClick={this.handleClose}>
+              Okay
+            </Button>
           </Modal.Actions>
         </Modal>
       </div>
