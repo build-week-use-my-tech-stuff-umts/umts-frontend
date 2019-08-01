@@ -2,43 +2,49 @@ import React from "react";
 import { Card, Image, Icon, Modal, Header, Button } from "semantic-ui-react";
 
 const ItemCard = props => {
+  // console.log(props.rentItem);
   return (
     <div className="item-card">
       <Card>
         <Image
-          src={require("../../img/camera-macro-optics-122400.jpg")}
+          src={props.rentItem.category.imageUrl} 
           wrapped
           ui={false}
         />
         <Card.Content>
-          <Card.Header>Item Name Props</Card.Header>
+          <Card.Header>{props.rentItem.name}</Card.Header>
           <Card.Description>
-            Item Description Props
+            {props.rentItem.description}
           </Card.Description>
         </Card.Content>
         <Card.Content extra>
-        <Card.Header>Item Price Props $000.00</Card.Header>
+        <Card.Header>${props.rentItem.price} per day</Card.Header>
         </Card.Content>
             <Card.Content extra>
-        <Icon name='camera' />
-        Item Type: Insert Type prop
+       
+        
+        {props.rentItem.category.name} 
+        
     </Card.Content>
-        <ItemPage />
+        <ItemPage props={props}/>
       </Card>
     </div>
   );
 };
 
-const ItemPage = () => {
+const ItemPage = props => {
+  // console.log(props.props.rentItem);
   return (
     <div className="item-page">
       <Modal trigger={<Button color='blue'>View Details</Button>}>
-        <Modal.Header>Item Name Props</Modal.Header>
+        <Modal.Header>{props.props.rentItem.name}</Modal.Header>
         <Modal.Content image>
-          <Image wrapped size="medium" src={require("../../img/camera-macro-optics-122400.jpg")} />
+          <Image wrapped size="medium" src={props.props.rentItem.category.imageUrl} />
+          
+         
           <Modal.Description>
-            <Header>Item Price Props $00.00</Header>
-            <p>ITEM Description Props</p>
+            <Header>${props.props.rentItem.price} per day</Header>
+            <p>{props.props.rentItem.description}</p>
           </Modal.Description>
         </Modal.Content>
       </Modal>
