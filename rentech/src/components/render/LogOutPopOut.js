@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Grid, Header, Popup, Segment } from 'semantic-ui-react';
+import {Grid, Popup,  } from 'semantic-ui-react';
 import { NavLink } from 'react-router-dom';
 
 const timeoutLength = 2500

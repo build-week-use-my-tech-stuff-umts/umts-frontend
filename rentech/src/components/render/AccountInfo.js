@@ -1,6 +1,6 @@
 import React, { useEffect }from "react";
 import EditAccount from "./EditAccount.js";
-import ChangePass from "./ChangePass.js";
+// import ChangePass from "./ChangePass.js";
 import { getUserProfile } from '../../store/actions/authActions'
 import {connect} from 'react-redux'
 
@@ -24,7 +24,7 @@ const AccountInfo = (props) => {
         <div className="flex-col">
           
           <EditAccount user={props.user}/>
-          <ChangePass user={props.user}/>
+          {/* <ChangePass user={props.user}/> */}
         </div>
       </div>
       <div>First Name: {props.user.firstName}</div>

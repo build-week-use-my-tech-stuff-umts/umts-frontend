@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Logo from "../../img/rentech-logo-new.png";
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 import LogOutPopOut from './LogOutPopOut'
 
 const Header = props => {

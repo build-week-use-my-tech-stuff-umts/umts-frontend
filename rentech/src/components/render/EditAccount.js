@@ -1,10 +1,10 @@
 import React from "react";
-import { Header, Button, Modal, Image } from "semantic-ui-react";
+import {Button, Modal } from "semantic-ui-react";
 import EditProfileForm from "../forms/EditProfileForm.js";
 //This Modal Component
 
 const EditAccount = (user) => {
-  console.log(user);
+  // console.log(user);
   return (
     <div className="edit-account">
       <Modal

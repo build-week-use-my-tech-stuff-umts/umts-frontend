@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Image, Icon, Modal, Header, Button } from "semantic-ui-react";
+import { Card, Image, Modal, Header, Button } from "semantic-ui-react";
 
 const ItemCard = props => {
   // console.log(props.rentItem);
