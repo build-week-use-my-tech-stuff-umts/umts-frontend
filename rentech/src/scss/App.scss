@@ -170,17 +170,18 @@ nav a {
 
   .item-list {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     background-color: white;
-    justify-content: space-between;
+    justify-content: space-around;
 
     .item-card {
       margin: 20px;
       box-shadow: 7px 5px 18px #333;
+      height: 480px !important;
+      display: flex;
 
-      .flex-row {
-        display: column;
+      .description-container {
+        height: 69px;
       }
 
       .blue {

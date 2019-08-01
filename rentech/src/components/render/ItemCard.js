@@ -5,9 +5,9 @@ const ItemCard = props => {
   // console.log(props.rentItem);
   return (
     <div className="item-card">
-      <Card>
+      <Card className="market-item">
         <Image src={props.rentItem.category.imageUrl} wrapped ui={false} />
-        <Card.Content>
+        <Card.Content className="flex">
           <Card.Header>{props.rentItem.name}</Card.Header>
           <Card.Description className="description-container">
             {props.rentItem.description}
@@ -17,7 +17,7 @@ const ItemCard = props => {
           <Card.Header>${props.rentItem.price} per day</Card.Header>
         </Card.Content>
         <Card.Content extra>{props.rentItem.category.name}</Card.Content>
-        <div className="flex-row">
+        <div>
           <ItemPage props={props} />
           <NotificationModal props={props} />
         </div>
