@@ -9,7 +9,7 @@ import { getMyEquipmentItem, deleteItem } from '../../store/actions/equipmentAct
 
 
 const MyTechList = props => {
-
+console.log('myTech',props)
   useEffect(() => {
     props.getMyEquipmentItem()
   },[]);
