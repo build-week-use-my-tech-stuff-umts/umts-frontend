@@ -6,6 +6,7 @@ import { Button, Modal } from "semantic-ui-react";
 import EditItemForm from "../forms/EditItemForm.js";
 //This Modal Component
 
+
 const EditItem = (props) => {
     const [isOpen, setIsOpen] = useState(false); //Pass as props to Editbutton
     const [item, setItem] = useState(props.rentItem)
@@ -15,6 +16,7 @@ const EditItem = (props) => {
     return (
         <div className="edit-account">
             <Modal
+                closeIcon
                 open={isOpen}
                 trigger={<Button
                     onClick={() => setIsOpen(true)}

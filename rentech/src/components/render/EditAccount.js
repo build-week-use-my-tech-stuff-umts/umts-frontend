@@ -1,9 +1,9 @@
 import React from "react";
-import {Button, Modal } from "semantic-ui-react";
+import { Button, Modal } from "semantic-ui-react";
 import EditProfileForm from "../forms/EditProfileForm.js";
 //This Modal Component
 
-const EditAccount = (user) => {
+const EditAccount = user => {
   // console.log(user);
   return (
     <div className="edit-account">
@@ -13,10 +13,11 @@ const EditAccount = (user) => {
             Edit Account
           </Button>
         }
+        closeIcon
       >
         <Modal.Header>Edit your Account Information</Modal.Header>
         <Modal.Content>
-          <EditProfileForm user={user}/>
+          <EditProfileForm user={user} />
         </Modal.Content>
       </Modal>
     </div>
