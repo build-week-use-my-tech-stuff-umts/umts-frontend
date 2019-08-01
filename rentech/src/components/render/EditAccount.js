@@ -3,7 +3,8 @@ import { Header, Button, Modal, Image } from "semantic-ui-react";
 import EditProfileForm from "../forms/EditProfileForm.js";
 //This Modal Component
 
-const EditAccount = () => {
+const EditAccount = (user) => {
+  console.log(user);
   return (
     <div className="edit-account">
       <Modal
@@ -15,7 +16,7 @@ const EditAccount = () => {
       >
         <Modal.Header>Edit your Account Information</Modal.Header>
         <Modal.Content>
-          <EditProfileForm />
+          <EditProfileForm user={user}/>
         </Modal.Content>
       </Modal>
     </div>

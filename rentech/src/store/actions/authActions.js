@@ -5,6 +5,46 @@ import { types }from './index'
 //res.data.user.(insert thing i want here)
 //res.data.token
 
+export const getUserProfile = () => dispatch => {
+
+  dispatch({ type: types.GET_USER_START});
+  return umtsApiWithAuth()
+    .get('/auth/user')
+    .then(
+      res => {
+        console.log(res)
+        dispatch({type: types.GET_USER_SUCCESS, payload: res.data.user});
+      }
+    )
+    .catch(
+      err => {
+        dispatch({type: types.GET_USER_FAIL, payload: err})
+        console.log(err)
+      }
+    )
+
+};
+
+export const editUser = user => dispatch => {
+
+  dispatch({ type: types.GET_USER_START});
+  return umtsApiWithAuth()
+    .put('/auth/profile', user)
+    .then(
+      res => {
+        console.log(res)
+        dispatch({type: types.GET_USER_SUCCESS, payload: res.data.user});
+      }
+    )
+    .catch(
+      err => {
+        dispatch({type: types.GET_USER_FAIL, payload: err})
+        console.log(err)
+      }
+    )
+
+};
+
 
 export const doSignIn = credentials => dispatch => {
 
@@ -13,7 +53,7 @@ export const doSignIn = credentials => dispatch => {
     .post('/auth/login', credentials)
     .then(
       res => {
-        console.log(res)
+        // console.log(res)
         localStorage.setItem('token', (res.data.token));
         dispatch({type: types.LOGIN_SUCCESS, payload: res.data});
       }
@@ -48,6 +88,12 @@ export const doCreateAccount = newUserDetails => dispatch =>{
 export const doSignOut = () => dispatch =>{
   dispatch({ type: types.LOGOUT_START});
 };
+
+
+
+
+
+
 
 export const doWelcomeBack = token => {
 	return { type: types.WELCOME_BACK, payload: token };
