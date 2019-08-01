@@ -1,9 +1,9 @@
 import React from "react";
 import { Header, Button, Modal, Image } from "semantic-ui-react";
-import NewPass from "../forms/UpdatePassword.js";
+import UpdatePassword from "../forms/UpdatePassword.js";
 //This Modal Component
 
-const ChangePass = () => {
+const ChangePass = (user) => {
   return (
     <div className="edit-account">
       <Modal
@@ -15,7 +15,7 @@ const ChangePass = () => {
       >
         <Modal.Header>Update your Password</Modal.Header>
         <Modal.Content>
-          <NewPass />
+          <UpdatePassword user={user}/>
         </Modal.Content>
       </Modal>
     </div>

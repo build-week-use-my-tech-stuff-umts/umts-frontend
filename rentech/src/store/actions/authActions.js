@@ -12,7 +12,7 @@ export const getUserProfile = () => dispatch => {
     .get('/auth/user')
     .then(
       res => {
-        console.log(res)
+        // console.log(res)
         dispatch({type: types.GET_USER_SUCCESS, payload: res.data.user});
       }
     )
@@ -39,6 +39,26 @@ export const editUser = user => dispatch => {
     .catch(
       err => {
         dispatch({type: types.GET_USER_FAIL, payload: err})
+        console.log(err)
+      }
+    )
+
+};
+
+export const editPass = user => dispatch => {
+
+  dispatch({ type: types.GET_PASS_START});
+  return umtsApiWithAuth()
+    .put('/auth/profile', user)
+    .then(
+      res => {
+        console.log(res)
+        dispatch({type: types.GET_PASS_SUCCESS, payload: res.data.user});
+      }
+    )
+    .catch(
+      err => {
+        dispatch({type: types.GET_PASS_FAIL, payload: err})
         console.log(err)
       }
     )

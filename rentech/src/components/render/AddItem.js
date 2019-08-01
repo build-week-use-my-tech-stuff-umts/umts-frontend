@@ -1,5 +1,5 @@
 import React from "react";
-import { Header, Button, Modal, Image } from "semantic-ui-react";
+import { Button, Modal } from "semantic-ui-react";
 import NewItemForm from "../forms/NewItemForm.js";
 //This Modal Component
 
