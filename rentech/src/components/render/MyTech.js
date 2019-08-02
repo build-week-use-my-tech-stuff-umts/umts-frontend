@@ -47,11 +47,7 @@ const MyTechList = props => {
 };
 
 function MyTechItems(props) {
-<<<<<<< HEAD
-  // console.log(props.rentItem)
-=======
   console.log(props.rentItem);
->>>>>>> daf1df74fea826ceac57f67ff34cff185974b22b
   return (
     <div className="myTech-item">
       <Card>
