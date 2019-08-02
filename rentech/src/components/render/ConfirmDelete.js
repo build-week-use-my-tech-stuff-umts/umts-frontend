@@ -7,6 +7,7 @@ const ConfirmDelete = props => {
   return (
     <div className="edit-account">
       <Modal
+        closeIcon
         size="mini"
         trigger={
           <Button color="red" size="small">
@@ -26,9 +27,6 @@ const ConfirmDelete = props => {
             positive
           >
             Yes
-          </Button>
-          <Button type="close" negative>
-            No
           </Button>
         </Modal.Content>
       </Modal>
