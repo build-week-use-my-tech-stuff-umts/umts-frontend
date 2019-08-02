@@ -1,7 +1,7 @@
 import React from "react";
 // import Header from "./Header.js";
 import LoginForm from "../forms/LoginForm.js";
-import Logo from "../../img/rentech-logo-new.png";
+import Logo from "../../img/logo-new.png";
 import { Card } from "semantic-ui-react";
 
 export default function LoginCard(props) {
@@ -10,7 +10,9 @@ export default function LoginCard(props) {
       <div className="center">
         <img src={Logo} alt="RenTech Logo" className="logo" />
       </div>
-      <LoginForm props={props} />
+      <div className="form-container">
+        <LoginForm props={props} />
+      </div>
     </Card>
   );
 }
