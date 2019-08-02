@@ -24,6 +24,11 @@ The top parent rendering call component starts at `App.js` and you may follow ho
 
 All the styling components were integrated from Semantic UI React and styled further using SASS. Refer `scss` folder for all additional styling.
 
+The color pallet consisted of  #0d0630, #18314f, #18314f, and #8bbeb2. Flexbox was used for the layout of the pages. Modals are used to 
+
+display information from within the site for convenience and aesthetics. 
+
+
 ## Deployment
 
 `public` folder has \_redirect config for netlify deployment.
