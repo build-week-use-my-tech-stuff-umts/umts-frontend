@@ -39,7 +39,7 @@ const MyTechList = props => {
 };
 
 function MyTechItems(props) {
-  console.log(props.rentItem)
+  // console.log(props.rentItem)
   return (
     <div className="myTech-item">
       <Card>
