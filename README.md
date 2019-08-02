@@ -18,7 +18,9 @@ Inside `src`, `components` have `forms` and `render`. `forms` has components bui
 
 `render` has all of rendering components that either render dynamically based on available data, renders designated forms and some additional routing is implemented in `AppRouter.js`
 
-The top parent rendering call component starts at `App.js` and you may follow how it chains up to all the relevant child components as stated above.
+The top parent rendering call component starts at `App.js` and you may follow how it chains up to all the relevant child components as stated above. 
+
+State was managed using Redux through a global store, all axios calls were managed through a withAuth component `umtsApiWithAuth` in the `actions` file, `authActions` and `equipmentActions`
 
 ### And coding style tests
 
@@ -36,4 +38,4 @@ All the styling components were integrated from Semantic UI React and styled fur
 
 - **Deejay Easter** -Front End(Lambda School Web21) [Deejay's Github](https://github.com/DeejayEaster)
 
-- **Wes Jonke** -Front End(Lambda School Web20.75) [Wes's Github](https://github.com/Wjonke)
+- **Wes Jonke** -Front End Framework (Lambda School Web20.75) [Wes's Github](https://github.com/Wjonke)
