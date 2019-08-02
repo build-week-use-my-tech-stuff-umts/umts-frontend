@@ -1,37 +1,45 @@
-import React, { useEffect }from "react";
-import {connect} from 'react-redux'
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
 
-import { Card, Image, Button } from "semantic-ui-react";
+import { Card, Image } from "semantic-ui-react";
 import AddItem from "./AddItem.js";
 import EditItem from "./EditItem.js";
 
-import { getMyEquipmentItem, deleteItem } from '../../store/actions/equipmentActions'
-
+import ConfirmDelete from "./ConfirmDelete";
+import {
+  getMyEquipmentItem,
+  deleteItem
+} from "../../store/actions/equipmentActions";
 
 const MyTechList = props => {
+  console.log("myTech", props);
 
   useEffect(() => {
-    props.getMyEquipmentItem()
-  },[]);
+    props.getMyEquipmentItem();
+  }, []);
 
   // console.log(props.rentItems);
 
   return (
     <div>
-      <h2 className="myTech-header">My Tech Items</h2>
-
+      <div className="flex-row">
+        <h2 className="myTech-header">My Tech Items</h2>
+        <AddItem props={props} />
+      </div>
       <div className="tech-container">
         <div className="myTech-list">
+          {!props.rentItems.length && <p>No Items to display yet!</p>}
 
-
-      {!props.rentItems.length && <p>No Items to display yet!</p>}
-
-        {props.rentItems && props.rentItems.map(rentItem => (
-          <MyTechItems key={rentItem.id } rentItem={rentItem} deleteItem={props.deleteItem}/>
-        ) )}
-
-          <AddItem props={props}/>
-
+          {props.rentItems &&
+            props.rentItems.map(rentItem => (
+              <div>
+                <MyTechItems
+                  key={rentItem.id}
+                  rentItem={rentItem}
+                  deleteItem={props.deleteItem}
+                />
+              </div>
+            ))}
         </div>
       </div>
     </div>
@@ -39,15 +47,15 @@ const MyTechList = props => {
 };
 
 function MyTechItems(props) {
+<<<<<<< HEAD
   // console.log(props.rentItem)
+=======
+  console.log(props.rentItem);
+>>>>>>> daf1df74fea826ceac57f67ff34cff185974b22b
   return (
     <div className="myTech-item">
       <Card>
-        <Image
-          src={props.rentItem.category.imageUrl}
-          wrapped
-          ui={false}
-        />
+        <Image src={props.rentItem.category.imageUrl} wrapped ui={false} />
         <Card.Content>
           <Card.Header>{props.rentItem.name}</Card.Header>
           <Card.Description>I{props.rentItem.description}</Card.Description>
@@ -57,34 +65,27 @@ function MyTechItems(props) {
           <Card.Header> ${props.rentItem.price} per day</Card.Header>
         </Card.Content>
 
-        <Card.Content extra>
-          {props.rentItem.category.name}
-        </Card.Content>
+        <Card.Content extra>{props.rentItem.category.name}</Card.Content>
 
         <div className="button-box">
+          <EditItem rentItem={props.rentItem} />
+          <ConfirmDelete
+            rentItem={props.rentItem}
+            deleteItem={props.deleteItem}
+          />
 
-
-          <EditItem rentItem={props.rentItem}/>
-
-          <Button 
-            onClick = {() => {props.deleteItem(props.rentItem.id).then(() => {window.location.reload() })}} 
-            color="red" 
-            size="small" 
-            className="techbutton"
-          >
-            Delete
-          </Button>
-          
-
+          {console.log("mytectpage", props)}
         </div>
       </Card>
     </div>
   );
 }
 
-const mapStateToProps = (state) => ({
-  rentItems: state.equipmentReducer.rentItems,
-  
-  })
+const mapStateToProps = state => ({
+  rentItems: state.equipmentReducer.rentItems
+});
 
-export default connect(mapStateToProps,{getMyEquipmentItem, deleteItem} )(MyTechList);
+export default connect(
+  mapStateToProps,
+  { getMyEquipmentItem, deleteItem }
+)(MyTechList);

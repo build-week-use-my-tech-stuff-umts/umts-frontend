@@ -13,7 +13,7 @@ const Footer = () => {
             <a className='footer-nav' href='https://rentech-ryan.netlify.com/about.html'>About the Team</a>
             <Icon className='footer-nav' size='large' name='html5' />
             <Icon className='footer-nav' size='large' name='js square' />
-            <p>©2019 RenTech --- Dj-Ad-Sky</p>
+            <p>©2019 RenTech --- Dj-Ad-Sky-Wes-Ned</p>
         </div>
     );
 };
